@@ -20,7 +20,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // When hit by a player bullet
+        // When hit by a Tower bullet
         if (collision.gameObject.tag == "Bullet")
         {
             Destroy(collision.gameObject);
