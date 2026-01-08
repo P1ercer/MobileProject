@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyShoot : MonoBehaviour
+public class TowerController : MonoBehaviour
 {
     public GameObject prefab;
     public float shootSpeed = 10f;
@@ -11,11 +11,11 @@ public class EnemyShoot : MonoBehaviour
     float timer = 0;
    
     public float shootTriggerDistance = 5;
-    GameObject player;
+    GameObject enemy;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        enemy = GameObject.FindGameObjectWithTag("Enemy");
     }
 
 
@@ -23,7 +23,7 @@ public class EnemyShoot : MonoBehaviour
     {
         timer += Time.deltaTime;
       
-        Vector3 shootDir = player.transform.position - transform.position;
+        Vector3 shootDir = enemy.transform.position - transform.position;
 
         if (shootDir.magnitude < shootTriggerDistance && timer > shootDelay)
         {
