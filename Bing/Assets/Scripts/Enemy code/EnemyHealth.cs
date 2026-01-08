@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+
+    public bool IsExoskeleton;
     public int health = 30;
 
 
@@ -21,10 +23,19 @@ public class EnemyHealth : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // When hit by a Tower bullet
-        if (collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "Sharp")
         {
-            Destroy(collision.gameObject);
+            if (IsExoskeleton == true)
+            {
+                TakeDamage(0);
+            }
             TakeDamage(1);
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "Explosive")
+        {
+            TakeDamage(1);
+            Destroy(collision.gameObject);
         }
     }
 
@@ -35,6 +46,7 @@ public class EnemyHealth : MonoBehaviour
         {
             Die();
         }
+
     }
 
     void Die()
