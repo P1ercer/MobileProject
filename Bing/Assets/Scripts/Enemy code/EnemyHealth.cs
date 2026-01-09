@@ -29,8 +29,11 @@ public class EnemyHealth : MonoBehaviour
             {
                 TakeDamage(0);
             }
+            if (IsExoskeleton == false)
+            {
             TakeDamage(1);
             Destroy(collision.gameObject);
+            }
         }
         if (collision.gameObject.tag == "Explosive")
         {
