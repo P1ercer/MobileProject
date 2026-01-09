@@ -31,19 +31,24 @@ public class TowerController : MonoBehaviour
         
             timer = 0;
             shootDir.Normalize();
-            prefab.GetComponent<Rigidbody2D>().velocity = shootDir * shootSpeed;
-            Destroy(prefab, bulletLifetime);
+            SpawnBullet(shootDir);
+            //prefab.GetComponent<Rigidbody2D>().velocity = shootDir * shootSpeed;
+            //Destroy(prefab, bulletLifetime);
         }
     }
-    private void SpawnBullet()
+    private void SpawnBullet(Vector3 shootDir)
     {
         if (isSharp == true)
         {
-            GameObject SharpObject = Instantiate(prefab, transform.position, Quaternion.identity);
+            GameObject SharpObject = Instantiate(prefab, transform.position, Quaternion.identity); 
+            SharpObject.GetComponent<Rigidbody2D>().velocity = shootDir * shootSpeed;
+            Destroy(SharpObject, bulletLifetime);
         }
         if (isExplosive == true)
         {
             GameObject ExplodyObject = Instantiate(prefab, transform.position, Quaternion.identity);
+            ExplodyObject.GetComponent<Rigidbody2D>().velocity = shootDir * shootSpeed;
+            Destroy(ExplodyObject, bulletLifetime);
         }
     }
 }
