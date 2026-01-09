@@ -34,8 +34,6 @@ public class TowerController : MonoBehaviour
             timer = 0;
             shootDir.Normalize();
             SpawnBullet(shootDir);
-            //prefab.GetComponent<Rigidbody2D>().velocity = shootDir * shootSpeed;
-            //Destroy(prefab, bulletLifetime);
         }
     }
     private void SpawnBullet(Vector3 shootDir)

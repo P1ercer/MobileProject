@@ -37,8 +37,11 @@ public class EnemyHealth : MonoBehaviour
         }
         if (collision.gameObject.tag == "Explosive")
         {
-            TakeDamage(1);
             Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "Explosion")
+        {
+            TakeDamage(10);
         }
     }
 
