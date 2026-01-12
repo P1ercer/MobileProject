@@ -6,7 +6,7 @@ public class TowerTargeting : MonoBehaviour
 {
     float timer;
     Transform target;
-    public TowerController towerController;
+    private TowerController towerController;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class TowerTargeting : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update(Vector3 shootDir)
+    void Update()
     {
         FindTarget();
 
@@ -30,6 +30,7 @@ public class TowerTargeting : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0f)
         {
+            Vector3 shootDir = target.transform.position - transform.position;
             towerController.SpawnBullet(shootDir);
             timer = 1f / timer;
         }
@@ -38,6 +39,7 @@ public class TowerTargeting : MonoBehaviour
     {
         Collider2D hit = Physics2D.OverlapCircle(transform.position, towerController.shootTriggerDistance, LayerMask.GetMask("Enemy"));
         target = hit ? hit.transform : null;
+        towerController.enemy = target.gameObject;
     }
 
 }

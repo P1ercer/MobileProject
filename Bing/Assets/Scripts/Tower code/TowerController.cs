@@ -15,7 +15,7 @@ public class TowerController : MonoBehaviour
     public bool isSharp;
     public bool isExplosive;
     public float shootTriggerDistance = 5;
-    GameObject enemy;
+    public GameObject enemy;
 
     void Start()
     {
