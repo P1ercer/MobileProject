@@ -45,15 +45,19 @@ public class TowerController : MonoBehaviour
     }
     public void SpawnBullet(Vector3 shootDir)
     {
-        if (isSharp == true)
+        float angle = Mathf.Atan2(shootDir.y, shootDir.x) * Mathf.Rad2Deg;
+        Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
+
+        if (isSharp)
         {
-            GameObject SharpObject = Instantiate(Sharp, transform.position, Quaternion.identity); 
+            GameObject SharpObject = Instantiate(Sharp, transform.position, rotation);
             SharpObject.GetComponent<Rigidbody2D>().velocity = shootDir * shootSpeed;
             Destroy(SharpObject, bulletLifetime);
         }
-        if (isExplosive == true)
+
+        if (isExplosive)
         {
-            GameObject ExplodyObject = Instantiate(Explosive, transform.position, Quaternion.identity);
+            GameObject ExplodyObject = Instantiate(Explosive, transform.position, rotation);
             ExplodyObject.GetComponent<Rigidbody2D>().velocity = shootDir * shootSpeed;
             Destroy(ExplodyObject, bulletLifetime);
         }
