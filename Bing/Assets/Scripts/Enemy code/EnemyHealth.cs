@@ -7,12 +7,16 @@ public class EnemyHealth : MonoBehaviour
 
     public bool IsExoskeleton;
     public int health = 30;
+    private TowerController towerController;
 
 
 
     void Start()
     {
-      
+        if (towerController == null)
+        {
+            towerController = GetComponent<TowerController>();
+        }
     }
 
     void Update()
@@ -31,7 +35,7 @@ public class EnemyHealth : MonoBehaviour
             }
             if (IsExoskeleton == false)
             {
-            TakeDamage(1);
+            TakeDamage(sharpDmg);
             Destroy(collision.gameObject);
             }
         }
@@ -41,7 +45,7 @@ public class EnemyHealth : MonoBehaviour
         }
         if (collision.gameObject.tag == "Explosion")
         {
-            TakeDamage(10);
+            TakeDamage(ExplosionDmg);
         }
     }
 
