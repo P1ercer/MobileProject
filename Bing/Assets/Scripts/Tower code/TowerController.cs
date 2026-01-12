@@ -10,7 +10,7 @@ public class TowerController : MonoBehaviour
     public float shootSpeed = 10f;
     public float bulletLifetime = 2.0f;
     public float shootDelay = 0.5f;
-    float timer = 0;
+    public float timer = 0;
     //if isSharp is false, the damage type is explosive. if its true, its sharp
     public bool isSharp;
     public bool isExplosive;
@@ -21,7 +21,7 @@ public class TowerController : MonoBehaviour
     {
         enemy = GameObject.FindGameObjectWithTag("Enemy");
     }
-
+  
     void Update()
     {
         timer += Time.deltaTime;
@@ -36,7 +36,7 @@ public class TowerController : MonoBehaviour
             SpawnBullet(shootDir);
         }
     }
-    private void SpawnBullet(Vector3 shootDir)
+    public void SpawnBullet(Vector3 shootDir)
     {
         if (isSharp == true)
         {
