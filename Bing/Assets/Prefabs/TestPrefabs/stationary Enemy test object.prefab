@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 684599100335830338}
   - component: {fileID: 138253440858378742}
   - component: {fileID: 1703521168834630505}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: stationary Enemy test object
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9dfbca43463c3e439e7f6b2985ea557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsExoskeleton: 1
+  IsExoskeleton: 0
   health: 30
 --- !u!50 &138253440858378742
 Rigidbody2D:
@@ -157,7 +157,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

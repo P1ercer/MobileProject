@@ -4,20 +4,33 @@ using UnityEngine;
 
 public class UpgradeTester : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static UpgradeTester Instance;
+
+    private TowerController selectedTower;
+
+    void Awake()
     {
-        
+        Instance = this;
+        gameObject.SetActive(false); // Hidden by default
     }
+
+    public void ShowForTower(TowerController tower)
+    {
+        selectedTower = tower;
+        gameObject.SetActive(true);
+    }
+
+    public void Hide()
+    {
+        selectedTower = null;
+        gameObject.SetActive(false);
+    }
+
     public void OnUpgradeButtonPressed()
     {
-        TowerController.Instance.ApplyUpgrade();
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (selectedTower != null)
+        {
+            selectedTower.ApplyUpgrade();
+        }
     }
 }

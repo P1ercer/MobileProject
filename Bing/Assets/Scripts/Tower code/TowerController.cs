@@ -91,6 +91,11 @@ public class TowerController : MonoBehaviour
         }
     }
 
+
+    public void OnMouseDown()
+    {
+        UpgradeTester.Instance.ShowForTower(this);
+    }
     //Apply the upgrade
     public void ApplyUpgrade()
     {
