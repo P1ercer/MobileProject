@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6250700856475812855}
   - component: {fileID: 6106060565352282323}
   - component: {fileID: 4598813820125843451}
+  - component: {fileID: 8944736313009489905}
+  - component: {fileID: 7362722655988298112}
   m_Layer: 0
   m_Name: Tower test object
   m_TagString: Untagged
@@ -101,12 +103,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sharp: {fileID: 7804320803952268212, guid: 2b91cf4cec1ce324690f6a6047db561c, type: 3}
   Explosive: {fileID: 2976222412907256880, guid: 944bc051fb22d324199fbf36a29d9d62, type: 3}
+  sharpDamage: 6
+  explosiveDamage: 10
   shootSpeed: 10
-  bulletLifetime: 2
-  shootDelay: 0.5
-  isSharp: 0
-  isExplosive: 1
-  shootTriggerDistance: 15
+  bulletLifetime: 4
+  shootDelay: 3
+  timer: 0
+  isSharp: 1
+  isExplosive: 0
+  shootTriggerDistance: 18
+  enemy: {fileID: 0}
+  upgradeName: Better bullets
+  upgradeDescription: Dodge this
+  sharpDamageIncrease: 10
+  explosiveDamageIncrease: 0
+  shootSpeedIncrease: 1.5
+  shootDelayReduction: 1
+  rangeIncrease: 10
+  upgradeApplied: 0
 --- !u!61 &6106060565352282323
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -179,3 +193,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8944736313009489905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8210819975160119375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1bc63aae5bcc0b49b7210a4c2823835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Explosion: {fileID: 8648994726485300173, guid: df87918995d4d034894f17e371c007f0, type: 3}
+  bulletLifetime: 10
+--- !u!114 &7362722655988298112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8210819975160119375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90501e74a75dab14195203fedaa64d4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

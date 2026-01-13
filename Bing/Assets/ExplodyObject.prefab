@@ -162,4 +162,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Explosion: {fileID: 8648994726485300173, guid: df87918995d4d034894f17e371c007f0, type: 3}
-  bulletLifetime: 6
+  bulletLifetime: 0.2

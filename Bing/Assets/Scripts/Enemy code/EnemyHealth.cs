@@ -4,64 +4,44 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-
     public bool IsExoskeleton;
     public int health = 30;
-    private TowerController towerController;
-
-
-
-    void Start()
-    {
-        if (towerController == null)
-        {
-            towerController = GetComponent<TowerController>();
-        }
-    }
-
-    void Update()
-    {
-
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // When hit by a Tower bullet
-        if (collision.gameObject.tag == "Sharp")
+        BulletDamage bullet = collision.GetComponent<BulletDamage>();
+
+        if (bullet == null) return;
+
+        if (collision.CompareTag("Sharp"))
         {
-            if (IsExoskeleton == true)
+            if (!IsExoskeleton)
             {
-                TakeDamage(0);
+                TakeDamage(bullet.damage);
             }
-            if (IsExoskeleton == false)
-            {
-            TakeDamage(sharpDmg);
-            Destroy(collision.gameObject);
-            }
-        }
-        if (collision.gameObject.tag == "Explosive")
-        {
             Destroy(collision.gameObject);
         }
-        if (collision.gameObject.tag == "Explosion")
+
+        if (collision.CompareTag("Explosive"))
         {
-            TakeDamage(ExplosionDmg);
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.CompareTag("Explosion"))
+        {
+            TakeDamage(bullet.damage);
         }
     }
 
-    public void TakeDamage(int damageAmount)
+
+    void TakeDamage(int damageAmount)
     {
         health -= damageAmount;
+
         if (health <= 0)
         {
-            Die();
+            Destroy(gameObject);
         }
-
-    }
-
-    void Die()
-    {
-        Destroy(gameObject);
     }
 
 
