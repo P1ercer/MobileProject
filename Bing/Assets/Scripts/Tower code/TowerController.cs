@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class TowerController : MonoBehaviour
 {
+
+    public static TowerController Instance;
+
     //private GameObject prefab;
     public GameObject Sharp;
     public GameObject Explosive;
 
     // Stats
-    public int sharpDamage = 5;
+    public int sharpDamage = 1;
     public int explosiveDamage = 10;
     public float shootSpeed = 10f;
     public float bulletLifetime = 2.0f;
@@ -21,8 +24,13 @@ public class TowerController : MonoBehaviour
     // Misc.
     public bool isExplosive;
     public float shootTriggerDistance = 5;
-    public GameObject enemy;
+    [HideInInspector] public GameObject enemy;
     private IEnumerable<Collider2D> hits;
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
@@ -63,29 +71,4 @@ public class TowerController : MonoBehaviour
         }
     }
 
-    [HideInInspector] public void ExplosionDmg()
-    {
-        foreach (Collider2D hit in hits)
-        {
-            EnemyHealth enemy = hit.GetComponent<EnemyHealth>();
-            if (enemy != null)
-            {
-                enemy.TakeDamage(explosiveDamage);
-            }
-
-        }
-    }
-    [HideInInspector]
-    public void SharpDmg()
-    {
-        foreach (Collider2D hit in hits)
-        {
-            EnemyHealth enemy = hit.GetComponent<EnemyHealth>();
-            if (enemy != null)
-            {
-                enemy.TakeDamage(sharpDamage);
-            }
-
-        }
-    }
 }
