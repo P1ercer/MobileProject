@@ -11,13 +11,13 @@ public class TowerController : MonoBehaviour
     public GameObject Sharp;
     public GameObject Explosive;
 
-    // Stats
+    [Header("stats")]
     public int sharpDamage = 1;
     public int explosiveDamage = 10;
     public float shootSpeed = 10f;
     public float bulletLifetime = 2.0f;
     public float shootDelay = 0.5f;
-    public float timer = 0;
+   [HideInInspector] public float timer = 0;
     //if isSharp is false, the damage type is explosive. if its true, its sharp
     public bool isSharp;
 
@@ -27,6 +27,19 @@ public class TowerController : MonoBehaviour
     [HideInInspector] public GameObject enemy;
     private IEnumerable<Collider2D> hits;
 
+    [Header("Upgrade Path")]
+    public string upgradeName;
+    [TextArea]
+    public string upgradeDescription;
+
+    public int sharpDamageIncrease;
+    public int explosiveDamageIncrease;
+    public float shootSpeedIncrease;
+    public float shootDelayReduction;
+    public float rangeIncrease;
+
+    public bool upgradeApplied = false;
+
     void Awake()
     {
         Instance = this;
@@ -34,6 +47,7 @@ public class TowerController : MonoBehaviour
 
     void Start()
     {
+        // ApplyUpgrade();
         enemy = GameObject.FindGameObjectWithTag("Enemy");
     }
   
@@ -58,17 +72,40 @@ public class TowerController : MonoBehaviour
 
         if (isSharp)
         {
-            GameObject SharpObject = Instantiate(Sharp, transform.position, rotation);
-            SharpObject.GetComponent<Rigidbody2D>().velocity = shootDir * shootSpeed;
-            Destroy(SharpObject, bulletLifetime);
+            GameObject sharpObj = Instantiate(Sharp, transform.position, rotation);
+            sharpObj.GetComponent<Rigidbody2D>().velocity = shootDir * shootSpeed;
+
+            sharpObj.GetComponent<BulletDamage>().damage = sharpDamage;
+
+            Destroy(sharpObj, bulletLifetime);
         }
 
         if (isExplosive)
         {
-            GameObject ExplodyObject = Instantiate(Explosive, transform.position, rotation);
-            ExplodyObject.GetComponent<Rigidbody2D>().velocity = shootDir * shootSpeed;
-            Destroy(ExplodyObject, bulletLifetime);
+            GameObject explosiveObj = Instantiate(Explosive, transform.position, rotation);
+            explosiveObj.GetComponent<Rigidbody2D>().velocity = shootDir * shootSpeed;
+
+            explosiveObj.GetComponent<BulletDamage>().damage = explosiveDamage;
+
+            Destroy(explosiveObj, bulletLifetime);
         }
     }
 
+    //Apply the upgrade
+    public void ApplyUpgrade()
+    {
+        if (upgradeApplied) return;
+
+        // ADDITIVE: Increase stats by the upgrade values
+        sharpDamage += sharpDamageIncrease;
+        explosiveDamage += explosiveDamageIncrease;
+        shootSpeed += shootSpeedIncrease;
+        shootDelay = Mathf.Max(0.05f, shootDelay - shootDelayReduction);
+        shootTriggerDistance += rangeIncrease;
+
+        upgradeApplied = true;
+
+        Debug.Log($"Upgrade Applied: {upgradeName} - {upgradeDescription}");
+        Debug.Log($"New Stats => SharpDamage: {sharpDamage}, ExplosiveDamage: {explosiveDamage}, ShootSpeed: {shootSpeed}, ShootDelay: {shootDelay}, Range: {shootTriggerDistance}");
+    }
 }

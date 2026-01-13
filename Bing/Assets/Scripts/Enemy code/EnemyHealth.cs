@@ -9,29 +9,31 @@ public class EnemyHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Sharp bullet
+        BulletDamage bullet = collision.GetComponent<BulletDamage>();
+
+        if (bullet == null) return;
+
         if (collision.CompareTag("Sharp"))
         {
             if (!IsExoskeleton)
             {
-                TakeDamage(TowerController.Instance.sharpDamage);
+                TakeDamage(bullet.damage);
             }
-
             Destroy(collision.gameObject);
         }
 
-        // Explosive bullet
         if (collision.CompareTag("Explosive"))
         {
-            TakeDamage(TowerController.Instance.explosiveDamage);
+            TakeDamage(bullet.damage);
             Destroy(collision.gameObject);
         }
 
         if (collision.CompareTag("Explosion"))
         {
-            TakeDamage(TowerController.Instance.explosiveDamage);
+            TakeDamage(bullet.damage);
         }
     }
+
 
     void TakeDamage(int damageAmount)
     {
