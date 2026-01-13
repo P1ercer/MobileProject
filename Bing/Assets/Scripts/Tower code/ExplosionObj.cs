@@ -26,6 +26,7 @@ public class ExplosionObj : MonoBehaviour
             GameObject ExplosionObject = Instantiate(Explosion, transform.position, Quaternion.identity);
             Destroy(ExplosionObject, bulletLifetime);
 
+            Destroy(gameObject);
         }
 
     }
