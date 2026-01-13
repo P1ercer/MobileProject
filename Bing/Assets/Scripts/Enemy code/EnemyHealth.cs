@@ -24,7 +24,6 @@ public class EnemyHealth : MonoBehaviour
 
         if (collision.CompareTag("Explosive"))
         {
-            TakeDamage(bullet.damage);
             Destroy(collision.gameObject);
         }
 
