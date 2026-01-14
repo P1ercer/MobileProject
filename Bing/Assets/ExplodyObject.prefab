@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7302527333194953479}
   - component: {fileID: -1350323802946835634}
   - component: {fileID: -8743337641676624593}
+  - component: {fileID: 2690814974048034212}
   m_Layer: 0
   m_Name: ExplodyObject
   m_TagString: Explosive
@@ -163,3 +164,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Explosion: {fileID: 8648994726485300173, guid: df87918995d4d034894f17e371c007f0, type: 3}
   bulletLifetime: 0.2
+--- !u!114 &2690814974048034212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976222412907256880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aaae512c1f0eb842b54315ba8d8c55e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnStrength: 5

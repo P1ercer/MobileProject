@@ -94,7 +94,7 @@ public class TowerController : MonoBehaviour
 
     public void OnMouseDown()
     {
-        UpgradeTester.Instance.ShowForTower(this);
+        TowerUpgradeUI.Instance.OpenUpgradeMenu(this);
     }
     //Apply the upgrade
     public void ApplyUpgrade()
