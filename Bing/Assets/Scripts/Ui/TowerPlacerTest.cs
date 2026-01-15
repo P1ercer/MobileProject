@@ -14,7 +14,6 @@ public class TowerPlacerTest : MonoBehaviour
         if (!Input.GetMouseButtonDown(0))
             return;
 
-        // Ignore UI clicks
         if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
             return;
 

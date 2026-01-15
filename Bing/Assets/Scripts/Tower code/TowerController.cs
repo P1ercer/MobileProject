@@ -101,7 +101,7 @@ public class TowerController : MonoBehaviour
     {
         if (upgradeApplied) return;
 
-        // ADDITIVE: Increase stats by the upgrade values
+        // Increase stats by the upgrade values
         sharpDamage += sharpDamageIncrease;
         explosiveDamage += explosiveDamageIncrease;
         shootSpeed += shootSpeedIncrease;
