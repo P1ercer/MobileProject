@@ -1,36 +1,60 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UpgradeTester : MonoBehaviour
 {
     public static UpgradeTester Instance;
 
-    private TowerController selectedTower;
+    [Header("UI")]
+    public GameObject panel;
+    public Text titleText;
+    public Text descriptionText;
+    public Text statsText;
+    public Button upgradeButton;
 
-    void Awake()
+    private TowerController currentTower;
+
+    private void Awake()
     {
         Instance = this;
-        gameObject.SetActive(false); // Hidden by default
+        panel.SetActive(false);
     }
 
     public void ShowForTower(TowerController tower)
     {
-        selectedTower = tower;
-        gameObject.SetActive(true);
+        currentTower = tower;
+        panel.SetActive(true);
+        RefreshUI();
     }
 
-    public void Hide()
+    public void Close()
     {
-        selectedTower = null;
-        gameObject.SetActive(false);
+        panel.SetActive(false);
+        currentTower = null;
     }
 
-    public void OnUpgradeButtonPressed()
+    public void ApplyUpgrade()
     {
-        if (selectedTower != null)
-        {
-            selectedTower.ApplyUpgrade();
-        }
+        if (currentTower == null || currentTower.upgradeApplied)
+            return;
+
+        currentTower.ApplyUpgrade();
+        RefreshUI();
+    }
+
+    void RefreshUI()
+    {
+        titleText.text = currentTower.upgradeName;
+        descriptionText.text = currentTower.upgradeDescription;
+
+        statsText.text =
+            $"Sharp Damage: {currentTower.sharpDamage}\n" +
+            $"Explosive Damage: {currentTower.explosiveDamage}\n" +
+            $"Fire Rate: {currentTower.shootDelay}\n" +
+            $"Range: {currentTower.shootTriggerDistance}";
+
+        upgradeButton.interactable = !currentTower.upgradeApplied;
     }
 }

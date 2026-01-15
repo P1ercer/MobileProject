@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -94,14 +94,14 @@ public class TowerController : MonoBehaviour
 
     public void OnMouseDown()
     {
-        UpgradeTester.Instance.ShowForTower(this);
+        TowerUpgradeUI.Instance.OpenUpgradeMenu(this);
     }
     //Apply the upgrade
     public void ApplyUpgrade()
     {
         if (upgradeApplied) return;
 
-        // ADDITIVE: Increase stats by the upgrade values
+        // Increase stats by the upgrade values
         sharpDamage += sharpDamageIncrease;
         explosiveDamage += explosiveDamageIncrease;
         shootSpeed += shootSpeedIncrease;
