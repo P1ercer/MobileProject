@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
@@ -10,16 +8,14 @@ public class TowerUpgradeUI : MonoBehaviour
     public static TowerUpgradeUI Instance;
 
     [Header("UI References")]
-    public GameObject panel;          // Your UpgradePanel
+    public GameObject panel;
     public TMP_Text upgradeNameText;
     public TMP_Text upgradeDescriptionText;
     public TMP_Text statsText;
     public Button upgradeButton;
 
     private TowerController selectedTower;
-
-    // Track if panel just opened to ignore the click that opened it
-    private bool ignoreNextClick = false;
+    private bool ignoreNextClick;
 
     private void Awake()
     {
@@ -29,17 +25,19 @@ public class TowerUpgradeUI : MonoBehaviour
 
     private void Update()
     {
-        if (panel.activeSelf && Input.GetMouseButtonDown(0))
+        if (!panel.activeSelf) return;
+
+        if (Input.GetMouseButtonDown(0))
         {
-            // Ignore the first click that opened the panel
+            // Ignore the click that opened the menu
             if (ignoreNextClick)
             {
                 ignoreNextClick = false;
                 return;
             }
 
-            // If click is NOT over the panel or any of its children, close it
-            if (!IsPointerOverPanel())
+            // If clicking NOT on UI → close
+            if (!EventSystem.current.IsPointerOverGameObject())
             {
                 CloseMenu();
             }
@@ -51,8 +49,6 @@ public class TowerUpgradeUI : MonoBehaviour
         selectedTower = tower;
         panel.SetActive(true);
         RefreshUI();
-
-        // Ignore the click that triggered this
         ignoreNextClick = true;
     }
 
@@ -73,6 +69,8 @@ public class TowerUpgradeUI : MonoBehaviour
 
     private void RefreshUI()
     {
+        if (selectedTower == null) return;
+
         upgradeNameText.text = selectedTower.upgradeName;
         upgradeDescriptionText.text = selectedTower.upgradeDescription;
 
@@ -84,17 +82,5 @@ public class TowerUpgradeUI : MonoBehaviour
             $"Range: {selectedTower.shootTriggerDistance}";
 
         upgradeButton.interactable = !selectedTower.upgradeApplied;
-    }
-
-    // Check if mouse is over the panel or its children
-    private bool IsPointerOverPanel()
-    {
-        if (EventSystem.current == null) return false;
-
-        return RectTransformUtility.RectangleContainsScreenPoint(
-            panel.GetComponent<RectTransform>(),
-            Input.mousePosition,
-            Camera.main
-        );
     }
 }
