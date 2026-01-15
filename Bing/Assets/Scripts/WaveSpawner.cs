@@ -4,39 +4,48 @@ using UnityEngine;
 public class WaveSpawner : MonoBehaviour
 {
     [Header("Prefabs")]
-    public GameObject enemyPrefab;       // Enemy to spawn
-    public Transform spawnPoint;          // Where enemies spawn
+    public GameObject enemyPrefab;
+    public Transform spawnPoint;
 
     [Header("Wave Settings")]
     public int enemiesPerWave = 5;
-    public float timeBetweenEnemies = 1f;
-    public float timeBetweenWaves = 5f;
+    public float timeBetweenSpawns = 0.5f;
+    public float timeBetweenWaves = 2f;
 
+    private int enemiesAlive = 0;
     private int currentWave = 0;
-    private bool isSpawning = false;
+    private bool waveInProgress = false;
 
     void Start()
     {
-        StartCoroutine(SpawnWaves());
+        StartCoroutine(WaveLoop());
     }
 
-    IEnumerator SpawnWaves()
+    IEnumerator WaveLoop()
     {
         while (true)
         {
-            currentWave++;
-            isSpawning = true;
-
-            for (int i = 0; i < enemiesPerWave; i++)
-            {
-                SpawnEnemy();
-                yield return new WaitForSeconds(timeBetweenEnemies);
-            }
-
-            isSpawning = false;
+            // Wait until no enemies are alive
+            yield return new WaitUntil(() => enemiesAlive == 0 && !waveInProgress);
 
             yield return new WaitForSeconds(timeBetweenWaves);
+
+            StartCoroutine(SpawnWave());
         }
+    }
+
+    IEnumerator SpawnWave()
+    {
+        waveInProgress = true;
+        currentWave++;
+
+        for (int i = 0; i < enemiesPerWave; i++)
+        {
+            SpawnEnemy();
+            yield return new WaitForSeconds(timeBetweenSpawns);
+        }
+
+        waveInProgress = false;
     }
 
     void SpawnEnemy()
@@ -47,6 +56,19 @@ public class WaveSpawner : MonoBehaviour
             return;
         }
 
-        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        enemiesAlive++;
+
+        // Hook into the enemy's death
+        EnemyHealth enemyScript = enemy.GetComponent<EnemyHealth>();
+        if (enemyScript != null)
+        {
+            enemyScript.onDeath += OnEnemyKilled;
+        }
+    }
+
+    void OnEnemyKilled()
+    {
+        enemiesAlive--;
     }
 }

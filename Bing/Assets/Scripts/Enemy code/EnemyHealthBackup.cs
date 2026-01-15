@@ -1,15 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System; // Needed for Action
 
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealthBackup : MonoBehaviour
 {
     public bool IsExoskeleton;
     public int health = 30;
-
-    // Added event for wave tracking
-    public Action onDeath;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -44,14 +40,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (health <= 0)
         {
-            Die();
+            Destroy(gameObject);
         }
-    }
-
-    // New method to trigger death event
-    void Die()
-    {
-        onDeath?.Invoke(); // Notify the spawner
-        Destroy(gameObject); // Then destroy enemy
     }
 }
