@@ -48,6 +48,11 @@ public class TowerUpgradeUI : MonoBehaviour
     {
         selectedTower = tower;
         panel.SetActive(true);
+
+        // Hide TowerSelectionUI
+        if (TowerSelectionUI.Instance != null)
+            TowerSelectionUI.Instance.gameObject.SetActive(false);
+
         RefreshUI();
         ignoreNextClick = true;
     }
@@ -56,7 +61,12 @@ public class TowerUpgradeUI : MonoBehaviour
     {
         panel.SetActive(false);
         selectedTower = null;
+
+        // Show TowerSelectionUI again
+        if (TowerSelectionUI.Instance != null)
+            TowerSelectionUI.Instance.gameObject.SetActive(true);
     }
+
 
     public void UpgradeTower()
     {
