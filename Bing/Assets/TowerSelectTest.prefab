@@ -128,7 +128,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -531,7 +531,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -794,7 +794,6 @@ MonoBehaviour:
   placementLayer:
     serializedVersion: 2
     m_Bits: 64
-  requireGround: 0
   clearSelectionAfterPlace: 1
 --- !u!114 &1455814988064286083
 MonoBehaviour:
@@ -809,7 +808,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerPrefabs:
-  - {fileID: 334741876056900940, guid: b81de2e84e719e845ad1e12b0666a0ed, type: 3}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
 --- !u!1 &5305413375367598479
@@ -846,8 +845,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 510.73, y: -0.00051498}
-  m_SizeDelta: {x: 289.53, y: 657}
+  m_AnchoredPosition: {x: 509.92105, y: 0}
+  m_SizeDelta: {x: 291.1479, y: 653}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5867087259398819661
 CanvasRenderer:
@@ -1012,7 +1011,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
