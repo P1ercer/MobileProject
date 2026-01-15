@@ -1,40 +1,39 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Waves : MonoBehaviour
 {
     [Header("Enemy Settings")]
     public GameObject enemyPrefab;
-    public int amount = 5;                  // How many enemies to spawn per wave
-    public float spawnPadding = 2f;         // Distance outside the screen
-    public float spawnDelay = 0.5f;         // Delay between enemy spawns
+    public int amount = 5;          // Enemies per wave
+    public float spawnDelay = 0.5f; // Delay between spawns
 
-    [Header("Spawn Control")]
-    public Transform spawnPoint;            // Optional manual spawn location
+    [Header("Spawn Points")]
+    public Transform[] spawnPoints;
 
-    private Camera cam;
     private int enemiesSpawned;
     private bool spawning;
+    private bool waveActive;
 
     private void Start()
     {
-        cam = Camera.main;
         StartNewWave();
     }
 
     private void Update()
     {
-        // Start spawning if not already doing so
-        if (!spawning && enemiesSpawned < amount)
+        // Spawn enemies for the current wave
+        if (waveActive && !spawning && enemiesSpawned < amount)
         {
             StartCoroutine(SpawnWave());
         }
 
-        // When wave is fully spawned AND all enemies are dead, start next wave
-        if (enemiesSpawned >= amount &&
-            GameObject.FindGameObjectsWithTag("enemy").Length == 0)
+        // Start next wave ONLY when all enemies are gone
+        if (waveActive &&
+            enemiesSpawned >= amount &&
+            GameObject.FindGameObjectsWithTag("Enemy").Length == 1)
         {
+            waveActive = false;
             StartNewWave();
         }
     }
@@ -43,6 +42,7 @@ public class Waves : MonoBehaviour
     {
         enemiesSpawned = 0;
         spawning = false;
+        waveActive = true;
     }
 
     IEnumerator SpawnWave()
@@ -61,47 +61,13 @@ public class Waves : MonoBehaviour
 
     void SpawnEnemy()
     {
-        Vector3 spawnPos;
-
-        if (spawnPoint != null)
+        if (spawnPoints == null || spawnPoints.Length == 0)
         {
-            spawnPos = spawnPoint.position;
-        }
-        else
-        {
-            spawnPos = GetPositionOutsideCamera();
+            Debug.LogWarning("No spawn points assigned!");
+            return;
         }
 
-        Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
-    }
-
-    Vector3 GetPositionOutsideCamera()
-    {
-        Vector3 min = cam.ViewportToWorldPoint(new Vector3(0, 0, cam.nearClipPlane));
-        Vector3 max = cam.ViewportToWorldPoint(new Vector3(1, 1, cam.nearClipPlane));
-
-        int side = Random.Range(0, 4);
-        Vector3 pos = Vector3.zero;
-
-        switch (side)
-        {
-            case 0: // Left
-                pos = new Vector3(min.x - spawnPadding, Random.Range(min.y, max.y), 0);
-                break;
-
-            case 1: // Right
-                pos = new Vector3(max.x + spawnPadding, Random.Range(min.y, max.y), 0);
-                break;
-
-            case 2: // Bottom
-                pos = new Vector3(Random.Range(min.x, max.x), min.y - spawnPadding, 0);
-                break;
-
-            case 3: // Top
-                pos = new Vector3(Random.Range(min.x, max.x), max.y + spawnPadding, 0);
-                break;
-        }
-
-        return pos;
+        Transform chosenPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        Instantiate(enemyPrefab, chosenPoint.position, Quaternion.identity);
     }
 }
