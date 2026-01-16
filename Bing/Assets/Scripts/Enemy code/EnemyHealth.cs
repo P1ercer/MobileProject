@@ -21,7 +21,7 @@ public class EnemyHealth : MonoBehaviour
         {
             if (!IsExoskeleton)
             {
-                TakeDamage(bullet.damage);
+                TakeDamage(0);
             }
             Destroy(collision.gameObject);
         }

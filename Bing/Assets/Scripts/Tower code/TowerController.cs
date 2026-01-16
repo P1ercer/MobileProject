@@ -110,6 +110,7 @@ public class TowerController : MonoBehaviour
 
     private void OnMouseDown()
     {
+        // Ignore clicks over UI
         if (EventSystem.current != null &&
             EventSystem.current.IsPointerOverGameObject())
             return;
