@@ -122,8 +122,8 @@ MonoBehaviour:
   shootDelayReduction: 1.4
   rangeIncrease: 9
   upgradeApplied: 0
-  TowerPrice: 50
-  upgradePrice: 75
+  TowerPrice: 300
+  upgradePrice: 150
   sellRefundPercent: 0.5
 --- !u!114 &3647614050536939341
 MonoBehaviour:
