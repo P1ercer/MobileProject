@@ -103,7 +103,7 @@ MonoBehaviour:
   Sharp: {fileID: 7804320803952268212, guid: 2b91cf4cec1ce324690f6a6047db561c, type: 3}
   Explosive: {fileID: 2976222412907256880, guid: 944bc051fb22d324199fbf36a29d9d62, type: 3}
   towerName: Midranger
-  towerDescription: Shoots quickly but has short damage, reliable nontheless
+  towerDescription: Shoots quickly but deals little damage, reliable nontheless
   sharpDamage: 4
   explosiveDamage: 10
   shootSpeed: 5
@@ -122,8 +122,8 @@ MonoBehaviour:
   shootDelayReduction: 0.5
   rangeIncrease: 10
   upgradeApplied: 0
-  TowerPrice: 50
-  upgradePrice: 75
+  TowerPrice: 125
+  upgradePrice: 85
   sellRefundPercent: 0.5
 --- !u!114 &4259493031658431229
 MonoBehaviour:
