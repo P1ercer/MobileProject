@@ -102,6 +102,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sharp: {fileID: 7804320803952268212, guid: 2b91cf4cec1ce324690f6a6047db561c, type: 3}
   Explosive: {fileID: 2976222412907256880, guid: 944bc051fb22d324199fbf36a29d9d62, type: 3}
+  towerName: Sharpshooter
+  towerDescription: long firing times, but powerful sharp damage.
   sharpDamage: 6
   explosiveDamage: 10
   shootSpeed: 10
@@ -120,6 +122,9 @@ MonoBehaviour:
   shootDelayReduction: 1
   rangeIncrease: 10
   upgradeApplied: 0
+  TowerPrice: 50
+  upgradePrice: 75
+  sellRefundPercent: 0.5
 --- !u!114 &8992020479121176532
 MonoBehaviour:
   m_ObjectHideFlags: 0

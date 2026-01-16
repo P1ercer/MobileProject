@@ -1,15 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TowerController : MonoBehaviour
 {
 
-    public static TowerController Instance;
 
     //private GameObject prefab;
     public GameObject Sharp;
     public GameObject Explosive;
+
+    [Header("Tower Info")]
+    public string towerName;
+
+    [TextArea(3, 6)]
+    public string towerDescription;
 
     [Header("stats")]
     public int sharpDamage = 1;
@@ -29,6 +35,7 @@ public class TowerController : MonoBehaviour
 
     [Header("Upgrade Path")]
     public string upgradeName;
+
     [TextArea]
     public string upgradeDescription;
 
@@ -40,19 +47,29 @@ public class TowerController : MonoBehaviour
 
     public bool upgradeApplied = false;
 
-    void Awake()
-    {
-        Instance = this;
-    }
+    [Header("Economy")]
+    public int TowerPrice = 50;
+    public int upgradePrice = 75;
+    [Range(0f, 1f)]
+    public float sellRefundPercent = 0.5f;
+
+    private int totalInvestedGold;
+
+
 
     void Start()
     {
         // ApplyUpgrade();
         enemy = GameObject.FindGameObjectWithTag("Enemy");
+
+        // Track gold invested in this tower
+        totalInvestedGold = TowerPrice;
     }
   
     void Update()
     {
+        if (enemy == null) return;
+
         timer += Time.deltaTime;
       
         Vector3 shootDir = enemy.transform.position - transform.position;
@@ -92,16 +109,36 @@ public class TowerController : MonoBehaviour
     }
 
 
-    public void OnMouseDown()
+    private void OnMouseDown()
     {
-        TowerUpgradeUI.Instance.OpenUpgradeMenu(this);
+        // Ignore clicks over UI
+        if (EventSystem.current != null &&
+            EventSystem.current.IsPointerOverGameObject())
+            return;
+
+        if (TowerUIManager.Instance == null)
+        {
+            Debug.LogError("TowerUIManager missing!");
+            return;
+        }
+
+        Debug.Log("Tower clicked: " + towerName);
+        TowerUIManager.Instance.OpenUpgradeMenu(this);
     }
+
+
+
+    public bool CanUpgrade()
+    {
+        return !upgradeApplied && CurrencyManager.Instance.HasGold(upgradePrice);
+    }
+
     //Apply the upgrade
     public void ApplyUpgrade()
     {
         if (upgradeApplied) return;
+        if (!CurrencyManager.Instance.SpendGold(upgradePrice)) return;
 
-        // Increase stats by the upgrade values
         sharpDamage += sharpDamageIncrease;
         explosiveDamage += explosiveDamageIncrease;
         shootSpeed += shootSpeedIncrease;
@@ -109,8 +146,18 @@ public class TowerController : MonoBehaviour
         shootTriggerDistance += rangeIncrease;
 
         upgradeApplied = true;
-
-        Debug.Log($"Upgrade Applied: {upgradeName} - {upgradeDescription}");
-        Debug.Log($"New Stats => SharpDamage: {sharpDamage}, ExplosiveDamage: {explosiveDamage}, ShootSpeed: {shootSpeed}, ShootDelay: {shootDelay}, Range: {shootTriggerDistance}");
+        totalInvestedGold += upgradePrice;
     }
+
+    public int GetSellValue()
+    {
+        return Mathf.RoundToInt(totalInvestedGold * sellRefundPercent);
+    }
+
+    public void SellTower()
+    {
+        CurrencyManager.Instance.AddGold(GetSellValue());
+        Destroy(gameObject);
+    }
+
 }
