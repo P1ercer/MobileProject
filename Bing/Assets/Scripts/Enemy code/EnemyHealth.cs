@@ -28,7 +28,6 @@ public class EnemyHealth : MonoBehaviour
 
         if (collision.CompareTag("Explosive"))
         {
-            TakeDamage(0);
             Destroy(collision.gameObject);
         }
 

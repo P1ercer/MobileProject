@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletDamage : MonoBehaviour
 {
 
-   [HideInInspector] public int damage;
+   public int damage;
 
     // Start is called before the first frame update
     void Start()

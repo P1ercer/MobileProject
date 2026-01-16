@@ -104,14 +104,12 @@ public class TowerController : MonoBehaviour
 
             explosiveObj.GetComponent<BulletDamage>().damage = explosiveDamage;
 
-            Destroy(explosiveObj, bulletLifetime);
         }
     }
 
 
     private void OnMouseDown()
     {
-        // Ignore clicks over UI
         if (EventSystem.current != null &&
             EventSystem.current.IsPointerOverGameObject())
             return;
