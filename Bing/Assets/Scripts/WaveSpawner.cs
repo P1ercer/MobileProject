@@ -15,22 +15,22 @@ public class WaveSpawner : MonoBehaviour
     public float timeBetweenSpawns = 0.5f;
     public float timeBetweenWaves = 2f;
 
-    private int enemiesAlive = 0;
     private int currentWave = 0;
     private bool waveInProgress = false;
 
     void Start()
     {
-        Debug.Log("WaveSpawner Start() running");
         StartCoroutine(WaveLoop());
     }
-
 
     IEnumerator WaveLoop()
     {
         while (true)
         {
-            yield return new WaitUntil(() => enemiesAlive == 0 && !waveInProgress);
+            // Wait until no enemies exist in the scene
+            yield return new WaitUntil(() =>
+                GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && !waveInProgress
+            );
 
             yield return new WaitForSeconds(timeBetweenWaves);
 
@@ -54,19 +54,7 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnEnemy()
     {
-        if (enemyPrefab == null || spawnPoint == null)
-        {
-            Debug.LogWarning("EnemyPrefab or SpawnPoint not assigned!");
-            return;
-        }
-
-        GameObject enemy = Instantiate(
-            enemyPrefab,
-            spawnPoint.position,
-            spawnPoint.rotation
-        );
-
-        enemiesAlive++;
+        GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
 
         // Assign path points
         EnemyPathAI pathAI = enemy.GetComponent<EnemyPathAI>();
@@ -74,21 +62,8 @@ public class WaveSpawner : MonoBehaviour
         {
             pathAI.SetPath(pathPoints);
         }
-        else
-        {
-            Debug.LogWarning("Spawned enemy has no EnemyPathAI!");
-        }
 
-        // Hook into death event
-        EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
-        if (enemyHealth != null)
-        {
-            enemyHealth.onDeath += OnEnemyKilled;
-        }
-    }
-
-    void OnEnemyKilled()
-    {
-        enemiesAlive--;
+        // REQUIRED: enemy prefab must be tagged "Enemy"
+        enemy.tag = "Enemy";
     }
 }
