@@ -7,6 +7,9 @@ public class WaveSpawner : MonoBehaviour
     public GameObject enemyPrefab;
     public Transform spawnPoint;
 
+    [Header("Path Settings")]
+    public Transform[] pathPoints;
+
     [Header("Wave Settings")]
     public int enemiesPerWave = 5;
     public float timeBetweenSpawns = 0.5f;
@@ -18,14 +21,15 @@ public class WaveSpawner : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("WaveSpawner Start() running");
         StartCoroutine(WaveLoop());
     }
+
 
     IEnumerator WaveLoop()
     {
         while (true)
         {
-            // Wait until no enemies are alive
             yield return new WaitUntil(() => enemiesAlive == 0 && !waveInProgress);
 
             yield return new WaitForSeconds(timeBetweenWaves);
@@ -56,14 +60,30 @@ public class WaveSpawner : MonoBehaviour
             return;
         }
 
-        GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        GameObject enemy = Instantiate(
+            enemyPrefab,
+            spawnPoint.position,
+            spawnPoint.rotation
+        );
+
         enemiesAlive++;
 
-        // Hook into the enemy's death
-        EnemyHealth enemyScript = enemy.GetComponent<EnemyHealth>();
-        if (enemyScript != null)
+        // Assign path points
+        EnemyPathAI pathAI = enemy.GetComponent<EnemyPathAI>();
+        if (pathAI != null)
         {
-            enemyScript.onDeath += OnEnemyKilled;
+            pathAI.SetPath(pathPoints);
+        }
+        else
+        {
+            Debug.LogWarning("Spawned enemy has no EnemyPathAI!");
+        }
+
+        // Hook into death event
+        EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
+        if (enemyHealth != null)
+        {
+            enemyHealth.onDeath += OnEnemyKilled;
         }
     }
 
