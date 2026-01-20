@@ -1,10 +1,24 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletDamage : MonoBehaviour
 {
-    public TowerController sourceTower;
+    
+        [HideInInspector] public TowerController sourceTower;
 
-    //Damage lol
+        private void Awake()
+        {
+            sourceTower = GetComponentInParent<TowerController>();
+        }
+    
+
+
+    public void Init(TowerController tower)
+    {
+        sourceTower = tower;
+    }
+
     public int GetDamage()
     {
         if (sourceTower == null) return 0;
@@ -14,12 +28,5 @@ public class BulletDamage : MonoBehaviour
             : sourceTower.explosiveDamage;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (!collision.CompareTag("Enemy")) return;
 
-        int damage = GetDamage();
-
-        Destroy(gameObject);
-    }
 }
