@@ -92,7 +92,8 @@ public class TowerController : MonoBehaviour
             GameObject sharpObj = Instantiate(Sharp, transform.position, rotation);
             sharpObj.GetComponent<Rigidbody2D>().velocity = shootDir * shootSpeed;
 
-            sharpObj.GetComponent<BulletDamage>().damage = sharpDamage;
+            BulletDamage bd = sharpObj.GetComponent<BulletDamage>();
+            bd.sourceTower = this;
 
             Destroy(sharpObj, bulletLifetime);
         }
@@ -102,10 +103,11 @@ public class TowerController : MonoBehaviour
             GameObject explosiveObj = Instantiate(Explosive, transform.position, rotation);
             explosiveObj.GetComponent<Rigidbody2D>().velocity = shootDir * shootSpeed;
 
-            explosiveObj.GetComponent<BulletDamage>().damage = explosiveDamage;
-
+            BulletDamage bd = explosiveObj.GetComponent<BulletDamage>();
+            bd.sourceTower = this;
         }
     }
+
 
 
     private void OnMouseDown()

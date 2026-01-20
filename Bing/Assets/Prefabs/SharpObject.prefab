@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5895588556729530035}
   - component: {fileID: -949003201579553140}
   - component: {fileID: 4719395925865785301}
-  - component: {fileID: 6800720570477091268}
+  - component: {fileID: -7255075177613445244}
   m_Layer: 0
   m_Name: SharpObject
   m_TagString: Sharp
@@ -162,7 +162,7 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
---- !u!114 &6800720570477091268
+--- !u!114 &-7255075177613445244
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

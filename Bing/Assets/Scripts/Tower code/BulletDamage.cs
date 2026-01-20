@@ -1,22 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletDamage : MonoBehaviour
 {
+    public TowerController sourceTower;
 
-   public int damage;
-
-    // Start is called before the first frame update
-    void Start()
+    public int GetDamage()
     {
-        
+        if (sourceTower == null) return 0;
+
+        return sourceTower.isSharp
+            ? sourceTower.sharpDamage
+            : sourceTower.explosiveDamage;
     }
 
-
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (!collision.CompareTag("Enemy")) return;
+
+        int damage = GetDamage();
+
+        Destroy(gameObject);
     }
 }
