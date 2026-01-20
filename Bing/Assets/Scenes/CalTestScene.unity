@@ -3717,9 +3717,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1388368757}
-  - component: {fileID: 1388368756}
   - component: {fileID: 1388368758}
-  - component: {fileID: 1388368759}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -3727,23 +3725,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1388368756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1388368755}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fa73a3b2b24f0048b464554bf57ed21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 0}
-  amount: 50
-  spawnDelay: 0.05
-  spawnPoints:
-  - {fileID: 596775737}
 --- !u!4 &1388368757
 Transform:
   m_ObjectHideFlags: 0
@@ -3771,8 +3752,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5144607498bd874a9d218be6e3e0036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 3617005610911810817, guid: c00a976f0524ffe4e9709ca3d9d0e772, type: 3}
   spawnPoint: {fileID: 596775737}
+  enemyPrefabs:
+  - {fileID: 6739478047705708023, guid: f76632c38ac962147b372464fab1ac88, type: 3}
   pathPoints:
   - {fileID: 596775737}
   - {fileID: 1057875251}
@@ -3807,32 +3789,7 @@ MonoBehaviour:
   - {fileID: 596775737}
   enemiesPerWave: 118
   timeBetweenSpawns: 0.5
-  timeBetweenWaves: 0.001
---- !u!114 &1388368759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1388368755}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2c6b1205c406cc4a8ed9e64f715fbd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 3617005610911810817, guid: c00a976f0524ffe4e9709ca3d9d0e772, type: 3}
-  spawnPoint: {fileID: 596775737}
-  pathPoints:
-  - {fileID: 596775737}
-  - {fileID: 1057875251}
-  - {fileID: 747422137}
-  - {fileID: 1648171374}
-  - {fileID: 873212998}
-  - {fileID: 1182636211}
-  - {fileID: 799825488}
-  - {fileID: 1626329661}
-  - {fileID: 708515591}
-  - {fileID: 1445454819}
+  timeBetweenWaves: 10
 --- !u!1 &1445454817
 GameObject:
   m_ObjectHideFlags: 0
