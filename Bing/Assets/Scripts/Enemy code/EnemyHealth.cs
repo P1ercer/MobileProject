@@ -44,7 +44,7 @@ public class EnemyHealth : MonoBehaviour
             return;
         }
     }
-
+    
     public void TakeDamage(int damageAmount)
     {
         health -= damageAmount;
@@ -55,6 +55,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    //DIE!
     void Die()
     {
         if (CurrencyManager.Instance != null)
