@@ -4,6 +4,7 @@ public class BulletDamage : MonoBehaviour
 {
     public TowerController sourceTower;
 
+    //Damage lol
     public int GetDamage()
     {
         if (sourceTower == null) return 0;
