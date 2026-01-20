@@ -33,7 +33,7 @@ public class CurrencyManager : MonoBehaviour
         return true;
     }
 
-    //add gp;d
+    //add gold
     public void AddGold(int amount)
     {
         gold += amount;

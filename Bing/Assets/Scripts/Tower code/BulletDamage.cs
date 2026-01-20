@@ -13,7 +13,7 @@ public class BulletDamage : MonoBehaviour
         }
     
 
-
+    //this freaking script that i hate
     public void Init(TowerController tower)
     {
         sourceTower = tower;

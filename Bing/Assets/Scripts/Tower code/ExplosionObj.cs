@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//Kaboom?
 public class ExplosionObj : MonoBehaviour
 {
     public GameObject Explosion;
@@ -19,6 +21,7 @@ public class ExplosionObj : MonoBehaviour
     {
         
     }
+    //yes Rico, Kaboom
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")

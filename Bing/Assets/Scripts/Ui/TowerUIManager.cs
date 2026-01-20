@@ -205,6 +205,8 @@ public class TowerUIManager : MonoBehaviour
     // ─────────────────────────────
     // UPGRADE MENU LOGIC
     // ─────────────────────────────
+
+    //open menu
     public void OpenUpgradeMenu(TowerController tower)
     {
         selectedTower = tower;
@@ -246,6 +248,7 @@ public class TowerUIManager : MonoBehaviour
         }
     }
 
+    //close menu
     public void CloseUpgradeMenu()
     {
         upgradePanel.SetActive(false);
@@ -253,7 +256,7 @@ public class TowerUIManager : MonoBehaviour
         selectedTower = null;
     }
 
-
+    //upgrade tower
     public void UpgradeTower()
     {
         if (selectedTower == null || selectedTower.upgradeApplied)
@@ -263,6 +266,7 @@ public class TowerUIManager : MonoBehaviour
         RefreshUpgradeUI();
     }
 
+    //refresh ui after upgrading
     private void RefreshUpgradeUI()
     {
         if (selectedTower == null)
@@ -284,6 +288,7 @@ public class TowerUIManager : MonoBehaviour
         upgradeButton.interactable = selectedTower.CanUpgrade();
     }
 
+    //sell the selected tower
     public void SellSelectedTower()
     {
         if (selectedTower == null)
