@@ -8,6 +8,8 @@ public class EnemyPathAI : MonoBehaviour
 
     private int currentPointIndex = 0;
 
+    public int CurrentIndex => currentPointIndex;
+
     void Update()
     {
         if (pathPoints == null || pathPoints.Length == 0) return;

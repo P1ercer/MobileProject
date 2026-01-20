@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System; // Needed for Action
@@ -7,37 +7,45 @@ public class EnemyHealth : MonoBehaviour
 {
     public bool IsExoskeleton;
     public int health = 30;
+    public int goldReward = 10;
 
-    // Added event for wave tracking
     public Action onDeath;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         BulletDamage bullet = collision.GetComponent<BulletDamage>();
-
         if (bullet == null) return;
 
+        int damage = bullet.GetDamage();
+
+        // Sharp damage logic
         if (collision.CompareTag("Sharp"))
         {
             if (!IsExoskeleton)
             {
-                TakeDamage(0);
+                TakeDamage(damage);
             }
+
             Destroy(collision.gameObject);
+            return;
         }
 
+        // explosion projectile (spawns explosion)
         if (collision.CompareTag("Explosive"))
         {
             Destroy(collision.gameObject);
+            return;
         }
 
+        // explosion damage
         if (collision.CompareTag("Explosion"))
         {
-            TakeDamage(bullet.damage);
+            TakeDamage(damage);
+            return;
         }
     }
-
-    void TakeDamage(int damageAmount)
+    
+    public void TakeDamage(int damageAmount)
     {
         health -= damageAmount;
 
@@ -47,10 +55,15 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    // New method to trigger death event
+    //DIE!
     void Die()
     {
-        onDeath?.Invoke(); // Notify the spawner
-        Destroy(gameObject); // Then destroy enemy
+        if (CurrencyManager.Instance != null)
+        {
+            CurrencyManager.Instance.AddGold(goldReward);
+        }
+
+        onDeath?.Invoke();
+        Destroy(gameObject);
     }
 }

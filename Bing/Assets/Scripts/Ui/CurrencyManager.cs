@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//capitalism
 public class CurrencyManager : MonoBehaviour
 {
     public static CurrencyManager Instance;
@@ -16,11 +17,13 @@ public class CurrencyManager : MonoBehaviour
             Destroy(gameObject);
     }
 
+    //gold you have
     public bool HasGold(int amount)
     {
         return gold >= amount;
     }
 
+    //spend gold
     public bool SpendGold(int amount)
     {
         if (!HasGold(amount))
@@ -30,6 +33,7 @@ public class CurrencyManager : MonoBehaviour
         return true;
     }
 
+    //add gp;d
     public void AddGold(int amount)
     {
         gold += amount;

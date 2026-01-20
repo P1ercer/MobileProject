@@ -4,8 +4,8 @@ using UnityEngine;
 public class WaveSpawner : MonoBehaviour
 {
     [Header("Prefabs")]
-    public GameObject enemyPrefab;
     public Transform spawnPoint;
+    public GameObject[] enemyPrefabs; // plural
 
     [Header("Path Settings")]
     public Transform[] pathPoints;
@@ -54,7 +54,15 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnEnemy()
     {
-        GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        // Pick a random enemy prefab
+        int randomIndex = Random.Range(0, enemyPrefabs.Length);
+        GameObject selectedPrefab = enemyPrefabs[randomIndex];
+
+        GameObject enemy = Instantiate(
+            selectedPrefab,
+            spawnPoint.position,
+            spawnPoint.rotation
+        );
 
         // Assign path points
         EnemyPathAI pathAI = enemy.GetComponent<EnemyPathAI>();
