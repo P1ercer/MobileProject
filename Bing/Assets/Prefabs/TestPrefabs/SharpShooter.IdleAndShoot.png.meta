@@ -1,0 +1,708 @@
+fileFormatVersion: 2
+guid: 6c7ca13ab52418343b0487a9004ddc0c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1450
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f08ea69518097f40915a62d0f8d1c94
+      internalID: 1308713293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_1
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 1450
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e4b3522a068fcd458480045a2b0ddde
+      internalID: 699711287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_2
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 1450
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1fab8043737da4479ea425ac95b3012
+      internalID: 104854056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_3
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 1450
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d25ddd5d073d668409f8b122866fdd38
+      internalID: 690221849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_4
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 1450
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c6787194556eef4798354ded6e98dcc
+      internalID: -288322388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1160
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 653cf5932601601459c6a873a590166a
+      internalID: 1020454687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_6
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 1160
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 380e1c5f574b1104a9667ec4fa5cc415
+      internalID: -1250938529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_7
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 1160
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70859109efc69144fbb5347df00d3647
+      internalID: -1828877239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_8
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 1160
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6edc20e72ec13441aea374a5ae8e3bc
+      internalID: 489693102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_9
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 1160
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbae08bbcad157647a86aab9204029ab
+      internalID: 392509468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 870
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b36ef2da985d7d940a1b9f958b638c30
+      internalID: 725526270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_11
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 870
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a5d83c77c24ea24e936ef39376fce16
+      internalID: 1556709116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_12
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 870
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca1021f12d1b0604aaf2dd6ebe570362
+      internalID: 1781423591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_13
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 870
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c841aed3e84337f4caffb8da62250145
+      internalID: -1317402328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_14
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 870
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed629a625800b8543baac6170290f198
+      internalID: 1250258916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 580
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e72a33f95d97f2446b6e75a0a6f41cbf
+      internalID: -1484302009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_16
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 580
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f84ce886bf32bb14daf5c6c2a92c7254
+      internalID: -1793070357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_17
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 580
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c56fe5b9fe240e841938dcd729df0c0f
+      internalID: -627572372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_18
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 580
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e33ebc97074c0947aaba612272d8c5d
+      internalID: -329111459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_19
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 580
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1258a019ab2e194f89c603c0dfe5181
+      internalID: 1174468640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 290
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39dc4deff8ec44d47af7fdef8bbfa015
+      internalID: 671788171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_21
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 290
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88f8b70d4913bae4bbdd66ae88187564
+      internalID: 630175107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_22
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 290
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9b49604248be484fa1c999a43239174
+      internalID: -1938099650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_23
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 290
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13b65489202897429afbff91405ef41
+      internalID: -871323978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_24
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 290
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2d2b675d06f71640b2a92400dbbf5fd
+      internalID: 1505750994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd1f9bbbd8c714f4fb455d3d8d34dcaa
+      internalID: 744945021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharpShooter.IdleAndShoot_26
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 0
+        width: 290
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f044e4937876d2468985b094053d02e
+      internalID: -2134317231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SharpShooter.IdleAndShoot_0: 1308713293
+      SharpShooter.IdleAndShoot_1: 699711287
+      SharpShooter.IdleAndShoot_10: 725526270
+      SharpShooter.IdleAndShoot_11: 1556709116
+      SharpShooter.IdleAndShoot_12: 1781423591
+      SharpShooter.IdleAndShoot_13: -1317402328
+      SharpShooter.IdleAndShoot_14: 1250258916
+      SharpShooter.IdleAndShoot_15: -1484302009
+      SharpShooter.IdleAndShoot_16: -1793070357
+      SharpShooter.IdleAndShoot_17: -627572372
+      SharpShooter.IdleAndShoot_18: -329111459
+      SharpShooter.IdleAndShoot_19: 1174468640
+      SharpShooter.IdleAndShoot_2: 104854056
+      SharpShooter.IdleAndShoot_20: 671788171
+      SharpShooter.IdleAndShoot_21: 630175107
+      SharpShooter.IdleAndShoot_22: -1938099650
+      SharpShooter.IdleAndShoot_23: -871323978
+      SharpShooter.IdleAndShoot_24: 1505750994
+      SharpShooter.IdleAndShoot_25: 744945021
+      SharpShooter.IdleAndShoot_26: -2134317231
+      SharpShooter.IdleAndShoot_3: 690221849
+      SharpShooter.IdleAndShoot_4: -288322388
+      SharpShooter.IdleAndShoot_5: 1020454687
+      SharpShooter.IdleAndShoot_6: -1250938529
+      SharpShooter.IdleAndShoot_7: -1828877239
+      SharpShooter.IdleAndShoot_8: 489693102
+      SharpShooter.IdleAndShoot_9: 392509468
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
