@@ -99,8 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9dfbca43463c3e439e7f6b2985ea557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsExoskeleton: 0
+  IsExoskeleton: 1
   health: 30
+  goldReward: 10
 --- !u!50 &138253440858378742
 Rigidbody2D:
   serializedVersion: 4

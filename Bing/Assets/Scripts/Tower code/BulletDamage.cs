@@ -4,29 +4,16 @@ using UnityEngine;
 
 public class BulletDamage : MonoBehaviour
 {
-    
-        [HideInInspector] public TowerController sourceTower;
-
-        private void Awake()
-        {
-            sourceTower = GetComponentInParent<TowerController>();
-        }
-    
-
-    //this freaking script that i hate
-    public void Init(TowerController tower)
-    {
-        sourceTower = tower;
-    }
+    public TowerController sourceTower;
 
     public int GetDamage()
     {
-        if (sourceTower == null) return 0;
+        if (CompareTag("Sharp"))
+            return sourceTower.sharpDamage;
 
-        return sourceTower.isSharp
-            ? sourceTower.sharpDamage
-            : sourceTower.explosiveDamage;
+        if (CompareTag("Explosion"))
+            return sourceTower.explosiveDamage;
+
+        return 0;
     }
-
-
 }
