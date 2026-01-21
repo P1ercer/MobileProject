@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 993423412749787302}
   - component: {fileID: 1247556062058194344}
   - component: {fileID: 3105727334130287515}
-  - component: {fileID: 2910253414423612622}
   - component: {fileID: 5223865851284862623}
+  - component: {fileID: 7773382280211848980}
   m_Layer: 0
   m_Name: '''Bullet'''
   m_TagString: Sharp
@@ -28,9 +28,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7677786397610533568}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.0013382732, w: 0.9999991}
+  m_LocalRotation: {x: 0, y: 0, z: -0.0013351172, w: 0.9999991}
   m_LocalPosition: {x: -18.558, y: -4.08, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.19612321, y: 0.1986, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1599096069, guid: 642c97bbad31d894889ffce9b9bf03ca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 77ccacf6051098844ae600861babda43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -114,7 +114,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &2910253414423612622
+--- !u!114 &5223865851284862623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7677786397610533568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc479094e29a2854ebb28efee70be754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourceTower: {fileID: 0}
+--- !u!60 &7773382280211848980
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,31 +163,20 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.125, y: 0.5}
-      - {x: -0.21875, y: 0.3125}
-      - {x: -0.21875, y: -0.5}
-      - {x: 0.21875, y: -0.5}
-      - {x: 0.21875, y: 0.3125}
-      - {x: 0.15625, y: 0.5}
+    - - {x: 0.703125, y: 0.375}
+      - {x: 0.5625, y: 0.40625}
+      - {x: -1, y: 0.40625}
+      - {x: -1, y: -0.40625}
+      - {x: 0.59375, y: -0.40625}
+      - {x: 0.84375, y: -0.328125}
+      - {x: 1, y: -0.1875}
+      - {x: 1, y: 0.1875}
   m_UseDelaunayMesh: 0
---- !u!114 &5223865851284862623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7677786397610533568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc479094e29a2854ebb28efee70be754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sourceTower: {fileID: 0}
