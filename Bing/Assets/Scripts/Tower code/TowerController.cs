@@ -114,37 +114,39 @@ public class TowerController : MonoBehaviour
     // Spawns and fires a projectile
     public void SpawnBullet(Vector3 shootDir)
     {
-        // Calculate bullet rotation based on direction
         float angle = Mathf.Atan2(shootDir.y, shootDir.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
 
-        // Spawn sharp projectile
-        if (isSharp)
+        // Sharp projectile
+        if (isSharp && Sharp != null)
         {
             GameObject sharpObj = Instantiate(Sharp, transform.position, rotation);
 
-            // Apply velocity to bullet
-            sharpObj.GetComponent<Rigidbody2D>().velocity = shootDir * shootSpeed;
+            Rigidbody2D rb = sharpObj.GetComponent<Rigidbody2D>();
+            if (rb != null)
+                rb.velocity = shootDir * shootSpeed;
 
-            // Assign tower reference for damage calculation
             BulletDamage bd = sharpObj.GetComponent<BulletDamage>();
-            bd.sourceTower = this;
+            if (bd != null)
+                bd.AddSourceTower(this);
 
-            // Destroy bullet after lifetime expires
             Destroy(sharpObj, bulletLifetime);
         }
 
-        // Spawn explosive projectile
-        if (isExplosive)
+        // Explosive projectile
+        if (isExplosive && Explosive != null)
         {
             GameObject explosiveObj = Instantiate(Explosive, transform.position, rotation);
 
-            // Apply velocity to bullet
-            explosiveObj.GetComponent<Rigidbody2D>().velocity = shootDir * shootSpeed;
+            Rigidbody2D rb = explosiveObj.GetComponent<Rigidbody2D>();
+            if (rb != null)
+                rb.velocity = shootDir * shootSpeed;
 
-            // Assign tower reference for damage calculation
             BulletDamage bd = explosiveObj.GetComponent<BulletDamage>();
-            bd.sourceTower = this;
+            if (bd != null)
+                bd.AddSourceTower(this);
+
+            Destroy(explosiveObj, bulletLifetime);
         }
     }
 
