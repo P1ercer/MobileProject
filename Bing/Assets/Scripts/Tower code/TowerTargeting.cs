@@ -35,6 +35,8 @@ public class TowerTargeting : MonoBehaviour
             timer = 1f / timer;
         }
     }
+
+    //find the first enemy in line
     void FindTarget()
     {
         Collider2D hit = Physics2D.OverlapCircle(transform.position, towerController.shootTriggerDistance, LayerMask.GetMask("Enemy"));
