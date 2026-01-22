@@ -4,50 +4,53 @@ using UnityEngine;
 
 public class TowerTargeting : MonoBehaviour
 {
-    float timer;
-    Transform target;
+    private Transform target;
     private TowerController towerController;
 
-    // Start is called before the first frame update
     void Start()
     {
-        if (towerController == null)
-        {
-            towerController = GetComponent<TowerController>();
-        }
-
-        timer = 1f / towerController.timer;
-
+        towerController = GetComponent<TowerController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         FindTarget();
 
         if (target == null) return;
 
-        timer -= Time.deltaTime;
-        if (timer <= 0f)
-        {
-            Vector3 shootDir = target.position - transform.position;
-            towerController.SpawnBullet(shootDir);
-            timer = 1f; // reset cooldown
-        }
+        //[REMOVED]: Fire control is already handled by TowerController
+        towerController.enemy = target.gameObject;
     }
 
-
+    //find the first enemy in line
     void FindTarget()
     {
-        Collider2D hit = Physics2D.OverlapCircle(
+        Collider2D[] hits = Physics2D.OverlapCircleAll(
             transform.position,
             towerController.shootTriggerDistance,
             LayerMask.GetMask("Enemy")
-        );
+            );
 
-        if (hit != null)
+        EnemyPathAI bestEnemy = null;
+        float bestProgressScore = float.MinValue;
+
+        foreach (Collider2D hit in hits)
         {
-            target = hit.transform;
+            EnemyPathAI enemyAI = hit.GetComponent<EnemyPathAI>();
+            if (enemyAI == null) continue;
+
+            float progressScore = CalculateProgress(enemyAI);
+
+            if (progressScore > bestProgressScore)
+            {
+                bestProgressScore = progressScore;
+                bestEnemy = enemyAI;
+            }
+        }
+
+        if (bestEnemy != null)
+        {
+            target = bestEnemy.transform;
             towerController.enemy = target.gameObject;
         }
         else
@@ -56,5 +59,31 @@ public class TowerTargeting : MonoBehaviour
             towerController.enemy = null;
         }
     }
+    /// <summary>
+    /// Higher value = further along the path
+    /// </summary>
+    float CalculateProgress(EnemyPathAI enemy)
+    {
+        int index = enemy.CurrentIndex;
 
+        float distanceBonus = 0f;
+
+        if (enemy.pathPoints != null && index < enemy.pathPoints.Length)
+        {
+            distanceBonus = 1f - Vector3.Distance(
+                enemy.transform.position,
+                enemy.pathPoints[index].position
+            );
+        }
+
+        return index * 1000f + distanceBonus;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (towerController == null) return;
+
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, towerController.shootTriggerDistance);
+    }
 }

@@ -208,4 +208,18 @@ public class TowerController : MonoBehaviour
         CurrencyManager.Instance.AddGold(GetSellValue());
         Destroy(gameObject);
     }
+    // Draw tower range in the Scene view
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, shootTriggerDistance);
+    }
+
+    // Draw a highlighted range when selected
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = new Color(1f, 0.5f, 0f, 0.9f); // orange
+        Gizmos.DrawWireSphere(transform.position, shootTriggerDistance);
+    }
+
 }
