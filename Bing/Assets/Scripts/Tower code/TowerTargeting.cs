@@ -30,18 +30,31 @@ public class TowerTargeting : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0f)
         {
-            Vector3 shootDir = target.transform.position - transform.position;
+            Vector3 shootDir = target.position - transform.position;
             towerController.SpawnBullet(shootDir);
-            timer = 1f / timer;
+            timer = 1f; // reset cooldown
         }
     }
 
-    //find the first enemy in line
+
     void FindTarget()
     {
-        Collider2D hit = Physics2D.OverlapCircle(transform.position, towerController.shootTriggerDistance, LayerMask.GetMask("Enemy"));
-        target = hit ? hit.transform : null;
-        towerController.enemy = target.gameObject;
+        Collider2D hit = Physics2D.OverlapCircle(
+            transform.position,
+            towerController.shootTriggerDistance,
+            LayerMask.GetMask("Enemy")
+        );
+
+        if (hit != null)
+        {
+            target = hit.transform;
+            towerController.enemy = target.gameObject;
+        }
+        else
+        {
+            target = null;
+            towerController.enemy = null;
+        }
     }
 
 }
