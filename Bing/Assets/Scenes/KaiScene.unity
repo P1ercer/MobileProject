@@ -200,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 542124807}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 49.8, y: 6.1, z: 0}
+  m_LocalPosition: {x: 63.13, y: 6.34, z: 0}
   m_LocalScale: {x: 27.11555, y: 26.095308, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -390,12 +390,96 @@ Transform:
   m_GameObject: {fileID: 752685876}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7080717, w: 0.7061406}
-  m_LocalPosition: {x: -0.3, y: -14.2, z: 0}
+  m_LocalPosition: {x: 21.73, y: 15.69, z: 0}
   m_LocalScale: {x: 5.351253, y: 10.554408, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90.156}
+--- !u!1 &753448152
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 753448154}
+  - component: {fileID: 753448153}
+  m_Layer: 0
+  m_Name: New Piskel (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &753448153
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753448152}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: e6e2c1003a4a5be4ab5645c374c9d483, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 3.8, y: 3}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &753448154
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753448152}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.2812, y: -12.3247, z: 0}
+  m_LocalScale: {x: 8.642567, y: 6.7527127, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &951829698
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,8 +580,8 @@ Transform:
   m_GameObject: {fileID: 951829698}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7046025, w: 0.7096023}
-  m_LocalPosition: {x: 15.84, y: -12.37, z: 0}
-  m_LocalScale: {x: 5.072812, y: 5.2659297, z: 1}
+  m_LocalPosition: {x: 14.9516, y: -9.3597, z: 0}
+  m_LocalScale: {x: 3.646071, y: 3.4538453, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -602,8 +686,8 @@ Transform:
   m_GameObject: {fileID: 1020270037}
   serializedVersion: 2
   m_LocalRotation: {x: -0.004122004, y: -0.0023652841, z: 0.7098241, w: 0.704363}
-  m_LocalPosition: {x: 15.88, y: -16.27, z: -0}
-  m_LocalScale: {x: 5.929497, y: 5.8804965, z: 1}
+  m_LocalPosition: {x: 14.93, y: -9.35, z: -0.01}
+  m_LocalScale: {x: 3.5910938, y: 3.5288699, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -670,7 +754,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.663882
+  orthographic size: 9.767383
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -695,7 +779,7 @@ Transform:
   m_GameObject: {fileID: 1437571586}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0027892413, w: 0.9999961}
-  m_LocalPosition: {x: 0.27, y: -12.57, z: -10}
+  m_LocalPosition: {x: 0.27, y: -12.12, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -755,3 +839,4 @@ SceneRoots:
   - {fileID: 951829701}
   - {fileID: 685847698}
   - {fileID: 752685878}
+  - {fileID: 753448154}
