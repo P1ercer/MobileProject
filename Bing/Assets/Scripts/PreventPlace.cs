@@ -2,32 +2,27 @@ using UnityEngine;
 
 public class PreventPlace : MonoBehaviour
 {
-    [Tooltip("Tag that blocks placement")]
     public string blockingTag = "Tower";
-
-    [Tooltip("Layer mask for objects that can block placement (optional)")]
     public LayerMask blockingLayers;
 
     private Collider myCollider;
 
-    private void Awake()
+    private void Start()
     {
         myCollider = GetComponent<Collider>();
 
         if (myCollider == null)
         {
-            Debug.LogError("PreventPlace requires a Collider on the same GameObject.");
+            Debug.LogError("PreventPlace requires a Collider.");
+            return;
         }
+
+        // Delay one physics frame so colliders are registered
+        Invoke(nameof(CheckAndDestroy), 0f);
     }
 
-    /// <summary>
-    /// Returns true if placement is allowed at the current position
-    /// </summary>
-    public bool CanPlace()
+    private void CheckAndDestroy()
     {
-        if (myCollider == null)
-            return false;
-
         Bounds bounds = myCollider.bounds;
 
         Collider[] hits = Physics.OverlapBox(
@@ -39,17 +34,14 @@ public class PreventPlace : MonoBehaviour
 
         foreach (Collider hit in hits)
         {
-            // Ignore self
             if (hit == myCollider)
                 continue;
 
-            // Block placement if overlapping a Tower
             if (hit.CompareTag(blockingTag))
             {
-                return false;
+                Destroy(gameObject);
+                return;
             }
         }
-
-        return true;
     }
 }
