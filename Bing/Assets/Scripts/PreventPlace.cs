@@ -1,47 +1,43 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Collider))]
 public class PreventPlace : MonoBehaviour
 {
+    [Tooltip("Tag of objects that block placement")]
     public string blockingTag = "Tower";
-    public LayerMask blockingLayers;
 
-    private Collider myCollider;
-
-    private void Start()
+    private void Awake()
     {
-        myCollider = GetComponent<Collider>();
-
-        if (myCollider == null)
+        Collider col = GetComponent<Collider>();
+        if (col == null)
         {
-            Debug.LogError("PreventPlace requires a Collider.");
-            return;
+            Debug.LogError("PreventPlace requires a Collider!");
         }
-
-        // Delay one physics frame so colliders are registered
-        Invoke(nameof(CheckAndDestroy), 0f);
+        else
+        {
+            col.isTrigger = true; // Make it a trigger so it doesn’t physically block
+        }
     }
 
-    private void CheckAndDestroy()
+    // Trigger detection
+    private void OnTriggerEnter(Collider other)
     {
-        Bounds bounds = myCollider.bounds;
-
-        Collider[] hits = Physics.OverlapBox(
-            bounds.center,
-            bounds.extents,
-            transform.rotation,
-            blockingLayers
-        );
-
-        foreach (Collider hit in hits)
+        // Only act on objects tagged as Tower
+        if (other.CompareTag(blockingTag))
         {
-            if (hit == myCollider)
-                continue;
+            Debug.Log($"Tower {other.name} placed on NoPlacey zone!");
 
-            if (hit.CompareTag(blockingTag))
+            // Refund the tower cost
+            TowerController tc = other.GetComponent<TowerController>();
+            if (tc != null)
             {
-                Destroy(gameObject);
-                return;
+                int refund = tc.TowerPrice;
+                Debug.Log($"Refunding {refund} gold to player");
+                CurrencyManager.Instance.AddGold(refund);
             }
+
+            // Destroy the tower immediately
+            Destroy(other.gameObject);
         }
     }
 }
