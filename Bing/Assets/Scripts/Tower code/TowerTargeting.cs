@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TowerTargeting : MonoBehaviour
@@ -15,75 +13,54 @@ public class TowerTargeting : MonoBehaviour
     void Update()
     {
         FindTarget();
-
-        if (target == null) return;
-
-        //[REMOVED]: Fire control is already handled by TowerController
-        towerController.enemy = target.gameObject;
+        towerController.enemy = target ? target.gameObject : null;
     }
 
-    //find the first enemy in line
     void FindTarget()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(
             transform.position,
-            towerController.shootTriggerDistance,
-            LayerMask.GetMask("Enemy")
-            );
+            towerController.shootTriggerDistance
+        );
 
         EnemyPathAI bestEnemy = null;
-        float bestProgressScore = float.MinValue;
+        float bestProgress = float.MinValue;
 
         foreach (Collider2D hit in hits)
         {
+            if (!hit.CompareTag("Enemy")) continue;
+
             EnemyPathAI enemyAI = hit.GetComponent<EnemyPathAI>();
             if (enemyAI == null) continue;
 
-            float progressScore = CalculateProgress(enemyAI);
+            float progress = CalculateProgress(enemyAI);
 
-            if (progressScore > bestProgressScore)
+            if (progress > bestProgress)
             {
-                bestProgressScore = progressScore;
+                bestProgress = progress;
                 bestEnemy = enemyAI;
             }
         }
 
-        if (bestEnemy != null)
-        {
-            target = bestEnemy.transform;
-            towerController.enemy = target.gameObject;
-        }
-        else
-        {
-            target = null;
-            towerController.enemy = null;
-        }
+        target = bestEnemy ? bestEnemy.transform : null;
     }
-    /// <summary>
-    /// Higher value = further along the path
-    /// </summary>
+
     float CalculateProgress(EnemyPathAI enemy)
     {
         int index = enemy.CurrentIndex;
+        float segmentProgress = 0f;
 
-        float distanceBonus = 0f;
-
-        if (enemy.pathPoints != null && index < enemy.pathPoints.Length)
+        if (enemy.pathPoints != null &&
+            index < enemy.pathPoints.Length)
         {
-            distanceBonus = 1f - Vector3.Distance(
+            float dist = Vector3.Distance(
                 enemy.transform.position,
                 enemy.pathPoints[index].position
             );
+
+            segmentProgress = 1f / (1f + dist);
         }
 
-        return index * 1000f + distanceBonus;
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        if (towerController == null) return;
-
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, towerController.shootTriggerDistance);
+        return index * 1000f + segmentProgress;
     }
 }

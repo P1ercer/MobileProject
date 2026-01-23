@@ -8,6 +8,7 @@ TagManager:
   - Explosive
   - Enemy
   - Explosion
+  - NoPlacey
   layers:
   - Default
   - TransparentFX
