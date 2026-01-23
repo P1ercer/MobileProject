@@ -114,37 +114,39 @@ public class TowerController : MonoBehaviour
     // Spawns and fires a projectile
     public void SpawnBullet(Vector3 shootDir)
     {
-        // Calculate bullet rotation based on direction
         float angle = Mathf.Atan2(shootDir.y, shootDir.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
 
-        // Spawn sharp projectile
-        if (isSharp)
+        // Sharp projectile
+        if (isSharp && Sharp != null)
         {
             GameObject sharpObj = Instantiate(Sharp, transform.position, rotation);
 
-            // Apply velocity to bullet
-            sharpObj.GetComponent<Rigidbody2D>().velocity = shootDir * shootSpeed;
+            Rigidbody2D rb = sharpObj.GetComponent<Rigidbody2D>();
+            if (rb != null)
+                rb.velocity = shootDir * shootSpeed;
 
-            // Assign tower reference for damage calculation
             BulletDamage bd = sharpObj.GetComponent<BulletDamage>();
-            bd.sourceTower = this;
+            if (bd != null)
+                bd.AddSourceTower(this);
 
-            // Destroy bullet after lifetime expires
             Destroy(sharpObj, bulletLifetime);
         }
 
-        // Spawn explosive projectile
-        if (isExplosive)
+        // Explosive projectile
+        if (isExplosive && Explosive != null)
         {
             GameObject explosiveObj = Instantiate(Explosive, transform.position, rotation);
 
-            // Apply velocity to bullet
-            explosiveObj.GetComponent<Rigidbody2D>().velocity = shootDir * shootSpeed;
+            Rigidbody2D rb = explosiveObj.GetComponent<Rigidbody2D>();
+            if (rb != null)
+                rb.velocity = shootDir * shootSpeed;
 
-            // Assign tower reference for damage calculation
             BulletDamage bd = explosiveObj.GetComponent<BulletDamage>();
-            bd.sourceTower = this;
+            if (bd != null)
+                bd.AddSourceTower(this);
+
+            Destroy(explosiveObj, bulletLifetime);
         }
     }
 
@@ -206,4 +208,18 @@ public class TowerController : MonoBehaviour
         CurrencyManager.Instance.AddGold(GetSellValue());
         Destroy(gameObject);
     }
+    // Draw tower range in the Scene view
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, shootTriggerDistance);
+    }
+
+    // Draw a highlighted range when selected
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = new Color(1f, 0.5f, 0f, 0.9f); // orange
+        Gizmos.DrawWireSphere(transform.position, shootTriggerDistance);
+    }
+
 }

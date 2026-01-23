@@ -1,19 +1,41 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletDamage : MonoBehaviour
 {
-    public TowerController sourceTower;
+    public List<TowerController> sourceTowers = new List<TowerController>();
 
     public int GetDamage()
     {
-        if (CompareTag("Sharp"))
-            return sourceTower.sharpDamage;
+        int totalDamage = 0;
 
-        if (CompareTag("Explosion"))
-            return sourceTower.explosiveDamage;
+        foreach (TowerController tower in sourceTowers)
+        {
+            if (tower == null) continue;
 
-        return 0;
+            if (CompareTag("Sharp"))
+                totalDamage += tower.sharpDamage;
+
+            else if (CompareTag("Explosion"))
+                totalDamage += tower.explosiveDamage;
+        }
+
+        return totalDamage;
+    }
+
+    public void AddSourceTower(TowerController tower)
+    {
+        if (tower != null && !sourceTowers.Contains(tower))
+            sourceTowers.Add(tower);
+    }
+
+    public void CopySourcesFrom(BulletDamage other)
+    {
+        if (other == null) return;
+
+        foreach (TowerController tower in other.sourceTowers)
+        {
+            AddSourceTower(tower);
+        }
     }
 }

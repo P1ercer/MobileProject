@@ -1,36 +1,34 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-//Kaboom?
+// Kaboom 
 public class ExplosionObj : MonoBehaviour
 {
     public GameObject Explosion;
-    public float bulletLifetime = 10.0f;
+    public float bulletLifetime = 1.0f;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    //yes Rico, Kaboom
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            GameObject ExplosionObject = Instantiate(Explosion, transform.position, Quaternion.identity);
-            Destroy(ExplosionObject, bulletLifetime);
+        if (!collision.CompareTag("Enemy"))
+            return;
 
-            Destroy(gameObject);
+        // Spawn explosion
+        GameObject explosionObj = Instantiate(
+            Explosion,
+            transform.position,
+            Quaternion.identity
+        );
+
+        BulletDamage projectileBD = GetComponent<BulletDamage>();
+        BulletDamage explosionBD = explosionObj.GetComponent<BulletDamage>();
+
+        if (projectileBD != null && explosionBD != null)
+        {
+            explosionBD.CopySourcesFrom(projectileBD);
         }
 
+        Destroy(explosionObj, bulletLifetime);
+        Destroy(gameObject);
     }
 }

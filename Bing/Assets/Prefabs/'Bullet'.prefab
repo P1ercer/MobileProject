@@ -126,7 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc479094e29a2854ebb28efee70be754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sourceTower: {fileID: 0}
+  sourceTowers:
+  - {fileID: 6169059954922415989, guid: 9de5873e00b250945960da9f50a68358, type: 3}
+  - {fileID: 4899255293621222631, guid: dc341ee0347b32d4694e8c6c3277d822, type: 3}
 --- !u!60 &7773382280211848980
 PolygonCollider2D:
   m_ObjectHideFlags: 0
