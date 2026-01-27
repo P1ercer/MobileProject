@@ -3941,7 +3941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe31affeb1404f64c91ff0668434a7e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockingTag: Tower
+  blockingTag: NoPlacey
 --- !u!50 &2075100511
 Rigidbody2D:
   serializedVersion: 4
