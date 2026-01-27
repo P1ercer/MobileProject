@@ -139,6 +139,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff6e2363e4fb214ea0def12207654e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &501657038 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1377024760559404008, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
+  m_PrefabInstance: {fileID: 1722704035623115276}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &805326700 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2499494595129280462, guid: 92778c5c5a163994291e904001d368f8, type: 3}
@@ -1084,39 +1095,75 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 907584506886747883, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -3
+      value: -0.57751
       objectReference: {fileID: 0}
     - target: {fileID: 907584506886747883, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 227
+      value: 251
+      objectReference: {fileID: 0}
+    - target: {fileID: 1132509823264345203, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
+      propertyPath: baseHealthText
+      value: 
+      objectReference: {fileID: 501657038}
+    - target: {fileID: 2189850606872392667, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2189850606872392667, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.50000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 2189850606872392667, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000030517578
+      objectReference: {fileID: 0}
+    - target: {fileID: 2189850606872392667, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0000019073486
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250365261798508394, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250365261798508394, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.49999997
       objectReference: {fileID: 0}
     - target: {fileID: 4250365261798508394, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 488
+      value: 417
       objectReference: {fileID: 0}
     - target: {fileID: 4250365261798508394, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 185
+      value: 214
       objectReference: {fileID: 0}
     - target: {fileID: 4332761948033820475, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
       propertyPath: m_Name
       value: TOWERPANELS
       objectReference: {fileID: 0}
+    - target: {fileID: 4458135758709895515, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 573
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458135758709895515, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 213.45
+      objectReference: {fileID: 0}
     - target: {fileID: 4969919839040106053, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 70.04785
+      value: 68.882
       objectReference: {fileID: 0}
     - target: {fileID: 4969919839040106053, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 260
+      value: 292
       objectReference: {fileID: 0}
     - target: {fileID: 5758544431355380742, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -73
+      value: -72
       objectReference: {fileID: 0}
     - target: {fileID: 5758544431355380742, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 262
+      value: 292
       objectReference: {fileID: 0}
     - target: {fileID: 9038361444066321027, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
       propertyPath: m_Pivot.x

@@ -40,6 +40,12 @@ public class TowerUIManager : MonoBehaviour
     public TMP_Text statsText;
     public Button upgradeButton;
 
+    // ─────────────────────────────
+    // BASE HEALTH UI
+    // ─────────────────────────────
+    [Header("Base Health UI")]
+    public TMP_Text baseHealthText;
+
 
     private TowerController selectedTower;
     private bool ignoreNextClick;
@@ -56,7 +62,16 @@ public class TowerUIManager : MonoBehaviour
 
         upgradePanel.SetActive(false);
         towerInfoPanel.SetActive(false);
+
+        if (BaseHealth.Instance != null)
+        {
+            UpdateBaseHealthUI(
+                BaseHealth.Instance.currentHealth,
+                BaseHealth.Instance.maxHealth
+            );
+        }
     }
+
 
 
     private void Update()
@@ -296,6 +311,11 @@ public class TowerUIManager : MonoBehaviour
 
         selectedTower.SellTower();
         CloseUpgradeMenu();
+    }
+    public void UpdateBaseHealthUI(int current, int max)
+    {
+        if (baseHealthText != null)
+            baseHealthText.text = $"Base HP: {current} / {max}";
     }
 
 
