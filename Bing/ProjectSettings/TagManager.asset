@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - Explosion
   - NoPlacey
+  - Tower
+  - Base
   layers:
   - Default
   - TransparentFX
