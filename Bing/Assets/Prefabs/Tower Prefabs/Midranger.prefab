@@ -12,14 +12,11 @@ GameObject:
   - component: {fileID: 3380612705063502933}
   - component: {fileID: 1808145187646115830}
   - component: {fileID: 2820992007809490133}
-  - component: {fileID: 5481073980370193653}
   - component: {fileID: 6178997665714703930}
   - component: {fileID: 7908505972823223470}
-  - component: {fileID: 3069119470065843667}
-  - component: {fileID: 4821237905704527163}
   m_Layer: 0
-  m_Name: MidRangeGunner.Idle_0
-  m_TagString: Untagged
+  m_Name: Midranger
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.4407, y: -10.6432, z: 0}
-  m_LocalScale: {x: 1.9249151, y: 1.7840599, z: 1}
+  m_LocalScale: {x: 0.3600639, y: 0.38016304, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -128,26 +125,6 @@ MonoBehaviour:
   animator: {fileID: 1808145187646115830}
   shootAnim: MidRangeGunnerShoot
   idleAnim: MidRangeGunnerIdle
---- !u!114 &5481073980370193653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7170875297377967927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7206e49c1792f13409519bde118ef2e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Explosive: {fileID: 0}
-  explosiveDamage: 10
-  shootSpeed: 10
-  bulletLifetime: 2
-  shootDelay: 0.5
-  timer: 0
-  shootTriggerDistance: 5
-  enemy: {fileID: 0}
 --- !u!114 &6178997665714703930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,30 +137,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85bf391da4dba964d866567566caf8dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sharp: {fileID: 0}
+  Sharp: {fileID: 7677786397610533568, guid: 43ea0d860ff60d5449c860ceff91bb6b, type: 3}
   Explosive: {fileID: 0}
-  towerName: 
-  towerDescription: 
-  sharpDamage: 1
-  explosiveDamage: 10
-  shootSpeed: 10
-  bulletLifetime: 2
-  shootDelay: 0.5
+  towerName: Midranger
+  towerDescription: Shoots slow, but deals good damage
+  sharpDamage: 6
+  explosiveDamage: 0
+  shootSpeed: 4
+  bulletLifetime: 5
+  shootDelay: 1.5
   timer: 0
-  isSharp: 0
+  isSharp: 1
   isExplosive: 0
   shootTriggerDistance: 5
   enemy: {fileID: 0}
-  upgradeName: 
-  upgradeDescription: 
-  sharpDamageIncrease: 0
+  upgradeName: Sharper bullets
+  upgradeDescription: Idk why he has two guns and can shoot slower than a snail
+  sharpDamageIncrease: 14
   explosiveDamageIncrease: 0
-  shootSpeedIncrease: 0
-  shootDelayReduction: 0
-  rangeIncrease: 0
+  shootSpeedIncrease: 4
+  shootDelayReduction: 0.5
+  rangeIncrease: 5
   upgradeApplied: 0
-  TowerPrice: 50
-  upgradePrice: 75
+  TowerPrice: 150
+  upgradePrice: 300
   sellRefundPercent: 0.5
 --- !u!114 &7908505972823223470
 MonoBehaviour:
@@ -197,46 +174,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90501e74a75dab14195203fedaa64d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3069119470065843667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7170875297377967927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1eddee8dd3b2bf4a9086b4c74b5dfbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4821237905704527163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7170875297377967927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0be433ddaa79b0247be2065665a430a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerPrefabs: []
-  placementLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  requireGround: 0
-  clearSelectionAfterPlace: 1
-  towerInfoPanel: {fileID: 0}
-  towerNameText: {fileID: 0}
-  towerDescriptionText: {fileID: 0}
-  towerPriceText: {fileID: 0}
-  upgradePanel: {fileID: 0}
-  upgradeNameText: {fileID: 0}
-  upgradeDescriptionText: {fileID: 0}
-  statsText: {fileID: 0}
-  upgradeButton: {fileID: 0}
-  baseHealthText: {fileID: 0}
-  sellButton: {fileID: 0}
-  sellValueText: {fileID: 0}
-  upgradeCostText: {fileID: 0}

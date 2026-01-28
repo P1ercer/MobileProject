@@ -43,6 +43,7 @@ public class TowerTargeting : MonoBehaviour
         }
 
         target = bestEnemy ? bestEnemy.transform : null;
+        towerController.enemy = target.gameObject;
     }
 
     float CalculateProgress(EnemyPathAI enemy)
