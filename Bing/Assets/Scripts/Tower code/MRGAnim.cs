@@ -36,12 +36,20 @@ public class MRGAnim : MonoBehaviour
             if (distance <= tower.shootTriggerDistance)
             {
                 // Enemy in range -> play shooting animation
-                animator.Play(shootAnim);
+                animator.SetBool("Shoot", true);
                 return;
             }
+            else
+            {
+                animator.SetBool("Shoot", false);
+            }
+        }
+        else
+        {
+            animator.SetBool("Shoot", false);
         }
 
         // No enemy or out of range -> idle animation
-        animator.Play(idleAnim);
+        //animator.Play(idleAnim);
     }
 }

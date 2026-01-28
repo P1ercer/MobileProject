@@ -30,7 +30,7 @@ public class TowerController : MonoBehaviour
 
     public float shootTriggerDistance = 5f;
 
-    [HideInInspector] public GameObject enemy;
+    public GameObject enemy;
 
     private IEnumerable<Collider2D> hits;
 
