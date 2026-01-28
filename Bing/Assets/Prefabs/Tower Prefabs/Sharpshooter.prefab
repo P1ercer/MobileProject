@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2526401258884301055}
   - component: {fileID: 4869528797436525069}
   - component: {fileID: 7910989709057425287}
+  - component: {fileID: 6814309831397593476}
   m_Layer: 0
   m_Name: Sharpshooter
   m_TagString: Tower
@@ -157,3 +158,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90501e74a75dab14195203fedaa64d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &6814309831397593476
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8867175927446835692}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.014384866, y: -0.11507088}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.53125, y: 4.53125}
+    newSize: {x: 4.53125, y: 4.53125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.4887521, y: 3.0353384}
+  m_EdgeRadius: 0
