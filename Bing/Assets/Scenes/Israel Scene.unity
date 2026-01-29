@@ -474,7 +474,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10.238104
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -554,6 +554,38 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8867175927446835692, guid: ca435c884f427cc41a774ab32b77a0c6, type: 3}
   m_PrefabInstance: {fileID: 8491220230775580333}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1163102770 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4869528797436525069, guid: ca435c884f427cc41a774ab32b77a0c6, type: 3}
+  m_PrefabInstance: {fileID: 8491220230775580333}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163102767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85bf391da4dba964d866567566caf8dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1163102771 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2526401258884301055, guid: ca435c884f427cc41a774ab32b77a0c6, type: 3}
+  m_PrefabInstance: {fileID: 8491220230775580333}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1163102774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163102767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f08efd33e0d25e4bb7b47ddc4c5155f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tower: {fileID: 1163102770}
+  animator: {fileID: 1163102771}
+  shootAnim: SharpShooterShoot
+  idleAnim: SharpShooterIdle
 --- !u!4 &1324941134 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3114951605293688340, guid: faad67f627fe9de4b8be946427330b12, type: 3}
@@ -763,6 +795,38 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7231463384959824751, guid: a8f0710248804aa4f9bd618e09c4efc2, type: 3}
   m_PrefabInstance: {fileID: 6203838566288976494}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1465725103 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1285856353324076584, guid: a8f0710248804aa4f9bd618e09c4efc2, type: 3}
+  m_PrefabInstance: {fileID: 6203838566288976494}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465725100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85bf391da4dba964d866567566caf8dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1465725104 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7753777485170519340, guid: a8f0710248804aa4f9bd618e09c4efc2, type: 3}
+  m_PrefabInstance: {fileID: 6203838566288976494}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1465725107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465725100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 095ebd52e85d76d419a8c0cd3608fe5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tower: {fileID: 1465725103}
+  animator: {fileID: 1465725104}
+  shootAnim: CannoneerShoot
+  idleAnim: CannoneerIdle
 --- !u!1 &1672066270
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,7 +972,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -929,8 +993,8 @@ Transform:
   m_GameObject: {fileID: 1672066270}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.70771813, w: 0.706495}
-  m_LocalPosition: {x: -9.88, y: 1.91, z: 0}
-  m_LocalScale: {x: 6.0380864, y: 4.562823, z: 1}
+  m_LocalPosition: {x: -1.08, y: 4.88, z: 0}
+  m_LocalScale: {x: 4.883001, y: 23.623652, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1133,10 +1197,6 @@ PrefabInstance:
     - target: {fileID: 4332761948033820475, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
       propertyPath: m_Name
       value: TOWERPANELS
-      objectReference: {fileID: 0}
-    - target: {fileID: 5770799929429820907, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CloseUpgradeMenu
       objectReference: {fileID: 0}
     - target: {fileID: 9038361444066321027, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
       propertyPath: m_Pivot.x
@@ -1457,7 +1517,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7231463384959824751, guid: a8f0710248804aa4f9bd618e09c4efc2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1465725107}
   m_SourcePrefab: {fileID: 100100000, guid: a8f0710248804aa4f9bd618e09c4efc2, type: 3}
 --- !u!1001 &6756497347065011458
 PrefabInstance:
@@ -1571,7 +1634,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8867175927446835692, guid: ca435c884f427cc41a774ab32b77a0c6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1163102774}
   m_SourcePrefab: {fileID: 100100000, guid: ca435c884f427cc41a774ab32b77a0c6, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
