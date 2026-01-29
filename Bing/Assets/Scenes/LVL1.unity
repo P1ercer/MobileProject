@@ -294,6 +294,43 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &159870718 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7231463384959824751, guid: a8f0710248804aa4f9bd618e09c4efc2, type: 3}
+  m_PrefabInstance: {fileID: 1313688223}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &159870721 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1285856353324076584, guid: a8f0710248804aa4f9bd618e09c4efc2, type: 3}
+  m_PrefabInstance: {fileID: 1313688223}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159870718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85bf391da4dba964d866567566caf8dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &159870722 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7753777485170519340, guid: a8f0710248804aa4f9bd618e09c4efc2, type: 3}
+  m_PrefabInstance: {fileID: 1313688223}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &159870725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159870718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 095ebd52e85d76d419a8c0cd3608fe5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tower: {fileID: 159870721}
+  animator: {fileID: 159870722}
+  shootAnim: CannoneerShoot
+  idleAnim: CannoneerIdle
 --- !u!1 &199444446
 GameObject:
   m_ObjectHideFlags: 0
@@ -2253,11 +2290,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1152885463104843754, guid: a8f0710248804aa4f9bd618e09c4efc2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.6401
+      value: 18.47
       objectReference: {fileID: 0}
     - target: {fileID: 1152885463104843754, guid: a8f0710248804aa4f9bd618e09c4efc2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2962
+      value: -0.43
       objectReference: {fileID: 0}
     - target: {fileID: 1152885463104843754, guid: a8f0710248804aa4f9bd618e09c4efc2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2298,7 +2335,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7231463384959824751, guid: a8f0710248804aa4f9bd618e09c4efc2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 159870725}
   m_SourcePrefab: {fileID: 100100000, guid: a8f0710248804aa4f9bd618e09c4efc2, type: 3}
 --- !u!1 &1505986560
 GameObject:
