@@ -695,6 +695,43 @@ MonoBehaviour:
   animator: {fileID: 159870722}
   shootAnim: Cannoner_Shoot
   idleAnim: Idle_Cannoner
+--- !u!114 &159870730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159870718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85bf391da4dba964d866567566caf8dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sharp: {fileID: 2976222412907256880, guid: 944bc051fb22d324199fbf36a29d9d62, type: 3}
+  Explosive: {fileID: 2976222412907256880, guid: 944bc051fb22d324199fbf36a29d9d62, type: 3}
+  towerName: 
+  towerDescription: 
+  sharpDamage: 1
+  explosiveDamage: 10
+  shootSpeed: 10
+  bulletLifetime: 2
+  shootDelay: 0.5
+  timer: 0
+  isSharp: 0
+  isExplosive: 0
+  shootTriggerDistance: 5
+  enemy: {fileID: 0}
+  upgradeName: 
+  upgradeDescription: 
+  sharpDamageIncrease: 0
+  explosiveDamageIncrease: 0
+  shootSpeedIncrease: 0
+  shootDelayReduction: 0
+  rangeIncrease: 0
+  upgradeApplied: 0
+  TowerPrice: 50
+  upgradePrice: 75
+  sellRefundPercent: 0.5
 --- !u!1 &182201980
 GameObject:
   m_ObjectHideFlags: 0
@@ -2067,6 +2104,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7231463384959824751, guid: a8f0710248804aa4f9bd618e09c4efc2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 159870725}
+    - targetCorrespondingSourceObject: {fileID: 7231463384959824751, guid: a8f0710248804aa4f9bd618e09c4efc2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 159870730}
   m_SourcePrefab: {fileID: 100100000, guid: a8f0710248804aa4f9bd618e09c4efc2, type: 3}
 --- !u!1 &1324196059
 GameObject:
@@ -2317,7 +2357,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 501843228, guid: 96b423de3d5935d469906756e97791e5, type: 3}
+  m_Sprite: {fileID: -1276854386, guid: 423c5d26ce37d5a409b167c3f122c29a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3002,7 +3042,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1228265531, guid: 96b423de3d5935d469906756e97791e5, type: 3}
+  m_Sprite: {fileID: 1451669140, guid: 423c5d26ce37d5a409b167c3f122c29a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3135,7 +3175,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1575636950, guid: 96b423de3d5935d469906756e97791e5, type: 3}
+  m_Sprite: {fileID: 2116674431, guid: 423c5d26ce37d5a409b167c3f122c29a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3347,7 +3387,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 872170172, guid: 96b423de3d5935d469906756e97791e5, type: 3}
+  m_Sprite: {fileID: 1726258137, guid: 423c5d26ce37d5a409b167c3f122c29a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
