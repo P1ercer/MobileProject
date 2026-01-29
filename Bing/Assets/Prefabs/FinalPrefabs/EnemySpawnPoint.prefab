@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3114951605293688340}
   - component: {fileID: 7885521173634642782}
+  - component: {fileID: 8674101480154042416}
   m_Layer: 0
   m_Name: EnemySpawnPoint
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5868553801045857788}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.70532143, w: 0.7088877}
+  m_LocalRotation: {x: 0, y: 0, z: -0.70532113, w: 0.70888793}
   m_LocalPosition: {x: -10.69, y: -3.6508, z: 0}
   m_LocalScale: {x: 0.7571, y: 0.8033, z: 1}
   m_ConstrainProportionsScale: 0
@@ -84,3 +85,138 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8674101480154042416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5868553801045857788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5144607498bd874a9d218be6e3e0036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 0}
+  pathPoints: []
+  waves:
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
+  - enemyPrefabs: []
+    enemyCount: 0
+    timeBetweenSpawns: 0
