@@ -125,8 +125,10 @@ public class TowerUIManager : MonoBehaviour
 
     public void ClearSelection()
     {
-        selectedIndex = -1;
-        towerInfoPanel.SetActive(false);
+        
+            selectedIndex = -1;
+            towerInfoPanel.SetActive(false);
+        
     }
 
 
@@ -167,7 +169,6 @@ public class TowerUIManager : MonoBehaviour
             return;
 
         TowerController tower = hit.GetComponentInParent<TowerController>();
-
         if (tower != null)
         {
             OpenUpgradeMenu(tower);
