@@ -693,8 +693,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tower: {fileID: 159870721}
   animator: {fileID: 159870722}
-  shootAnim: CannoneerShoot
-  idleAnim: CannoneerIdle
+  shootAnim: Cannoner_Shoot
+  idleAnim: Idle_Cannoner
 --- !u!1 &182201980
 GameObject:
   m_ObjectHideFlags: 0
@@ -3940,7 +3940,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -758.3, y: -292}
+  m_AnchoredPosition: {x: -758.3, y: -275.9}
   m_SizeDelta: {x: 178.2296, y: 49.5316}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2095567576
