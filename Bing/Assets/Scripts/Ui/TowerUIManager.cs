@@ -200,7 +200,7 @@ public class TowerUIManager : MonoBehaviour
             Debug.Log("Cannot place tower here");
             return;
         }
-  
+   
 
         // Already a tower here
         Collider2D hit = Physics2D.OverlapPoint(worldPos);
