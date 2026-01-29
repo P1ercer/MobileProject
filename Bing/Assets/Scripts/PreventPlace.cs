@@ -11,12 +11,12 @@ public class PreventPlace : MonoBehaviour
     [Tooltip("Tag of objects that block placement")]
     public string blockingTag = "Tower";
 
-    private Collider2D col;
+    public BoxCollider2D col;
 
 
     private void Awake()
     {
-        col = GetComponent<Collider2D>();
+        col = GetComponent<BoxCollider2D>();
         col.isTrigger = true;
     }
 
@@ -26,7 +26,7 @@ public class PreventPlace : MonoBehaviour
     }
 
     // Trigger detection
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         // Only act on objects tagged as Tower
         if (other.CompareTag(blockingTag))

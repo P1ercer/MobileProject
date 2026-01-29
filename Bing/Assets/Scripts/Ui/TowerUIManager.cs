@@ -195,6 +195,7 @@ public class TowerUIManager : MonoBehaviour
         Vector2 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         // Blocked by No-Place zone
+
         if (preventPlace != null && preventPlace.IsBlocking(worldPos))
         {
             Debug.Log("Cannot place tower here");
