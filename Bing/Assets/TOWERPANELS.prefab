@@ -681,7 +681,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1132509823264345203}
         m_TargetAssemblyTypeName: TowerUIManager, Assembly-CSharp
-        m_MethodName: ClearSelection
+        m_MethodName: CloseUpgradeMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1291,6 +1291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0be433ddaa79b0247be2065665a430a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  preventPlace: {fileID: 445442272106636747, guid: bb7cec78c22f04a438b9aa1228d56fdf, type: 3}
   towerPrefabs:
   - {fileID: 0}
   - {fileID: 0}

@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 public class TowerUIManager : MonoBehaviour
 {
     public static TowerUIManager Instance;
-
+    [SerializeField] private PreventPlace preventPlace;
     // ─────────────────────────────
     // TOWER SELECTION (Build UI)
     // ─────────────────────────────
@@ -180,7 +180,7 @@ public class TowerUIManager : MonoBehaviour
     // ─────────────────────────────
     // PLACEMENT LOGIC
     // ─────────────────────────────
-    private void HandleTowerPlacement()
+    public void HandleTowerPlacement()
     {
         if (!Input.GetMouseButtonDown(0))
             return;
@@ -189,32 +189,41 @@ public class TowerUIManager : MonoBehaviour
             EventSystem.current.IsPointerOverGameObject())
             return;
 
-        Vector2 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Collider2D hit = Physics2D.OverlapPoint(worldPos);
-
-        // Don't place on top of towers
-        if (hit != null && hit.GetComponentInParent<TowerController>() != null)
+        if (!HasSelection())
             return;
 
-        if (!HasSelection())
+        Vector2 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        // Blocked by No-Place zone
+        if (preventPlace != null && preventPlace.IsBlocking(worldPos))
+        {
+            Debug.Log("Cannot place tower here");
+            return;
+        }
+  
+
+        // Already a tower here
+        Collider2D hit = Physics2D.OverlapPoint(worldPos);
+        if (hit != null && hit.GetComponentInParent<TowerController>() != null)
             return;
 
         GameObject prefab = GetSelectedTowerPrefab();
         TowerController towerData = prefab.GetComponent<TowerController>();
 
-        //  Not enough gold
+        // Not enough gold
         if (!CurrencyManager.Instance.HasGold(towerData.TowerPrice))
             return;
 
-        //  Spend gold
+        // Spend gold
         CurrencyManager.Instance.SpendGold(towerData.TowerPrice);
 
-        //  Place tower
+        // Place tower
         Instantiate(prefab, worldPos, Quaternion.identity);
 
         if (clearSelectionAfterPlace)
             ClearSelection();
     }
+
 
 
 

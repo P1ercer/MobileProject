@@ -1,60 +1,75 @@
 using System.Collections;
 using UnityEngine;
 
+[System.Serializable]
+public class Wave
+{
+    [Header("Enemies")]
+    public GameObject[] enemyPrefabs;
+    public int enemyCount = 5;
+
+    [Header("Timing")]
+    public float timeBetweenSpawns = 0.5f;
+}
+
 public class WaveSpawner : MonoBehaviour
 {
-    [Header("Prefabs")]
+    [Header("Spawn Settings")]
     public Transform spawnPoint;
-    public GameObject[] enemyPrefabs; // plural
-
-    [Header("Path Settings")]
     public Transform[] pathPoints;
 
     [Header("Wave Settings")]
-    public int enemiesPerWave = 5;
-    public float timeBetweenSpawns = 0.5f;
-    public float timeBetweenWaves = 2f;
+    public Wave[] waves;
 
-    private int currentWave = 0;
+    private int currentWaveIndex = -1;
     private bool waveInProgress = false;
+    private bool waitingForButton = true;
 
-    void Start()
+    void Update()
     {
-        StartCoroutine(WaveLoop());
-    }
-
-    IEnumerator WaveLoop()
-    {
-        while (true)
+        // Check if the current wave has ended
+        if (waveInProgress &&
+            GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
-            // Wait until no enemies exist in the scene
-            yield return new WaitUntil(() =>
-                GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && !waveInProgress
-            );
-
-            yield return new WaitForSeconds(timeBetweenWaves);
-
-            StartCoroutine(SpawnWave());
+            waveInProgress = false;
+            waitingForButton = true;
+            Debug.Log("Wave finished. Waiting for player input.");
         }
     }
 
-    IEnumerator SpawnWave()
+    /// <summary>
+    /// Call this from a UI Button
+    /// </summary>
+    public void StartNextWave()
+    {
+        if (waveInProgress || !waitingForButton)
+            return;
+
+        currentWaveIndex++;
+
+        if (currentWaveIndex >= waves.Length)
+        {
+            Debug.Log("All waves completed!");
+            return;
+        }
+
+        waitingForButton = false;
+        StartCoroutine(SpawnWave(waves[currentWaveIndex]));
+    }
+
+    IEnumerator SpawnWave(Wave wave)
     {
         waveInProgress = true;
-        currentWave++;
 
-        for (int i = 0; i < enemiesPerWave; i++)
+        for (int i = 0; i < wave.enemyCount; i++)
         {
-            SpawnEnemy();
-            yield return new WaitForSeconds(timeBetweenSpawns);
+            SpawnEnemy(wave.enemyPrefabs);
+            yield return new WaitForSeconds(wave.timeBetweenSpawns);
         }
-
-        waveInProgress = false;
     }
 
-    void SpawnEnemy()
+    void SpawnEnemy(GameObject[] enemyPrefabs)
     {
-        // Pick a random enemy prefab
         int randomIndex = Random.Range(0, enemyPrefabs.Length);
         GameObject selectedPrefab = enemyPrefabs[randomIndex];
 
@@ -64,14 +79,12 @@ public class WaveSpawner : MonoBehaviour
             spawnPoint.rotation
         );
 
-        // Assign path points
         EnemyPathAI pathAI = enemy.GetComponent<EnemyPathAI>();
         if (pathAI != null)
         {
             pathAI.SetPath(pathPoints);
         }
 
-        // REQUIRED: enemy prefab must be tagged "Enemy"
         enemy.tag = "Enemy";
     }
 }
