@@ -368,6 +368,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1276854386, guid: 423c5d26ce37d5a409b167c3f122c29a, type: 3}
+    - target: {fileID: 4250365261798508394, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -393.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250365261798508394, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 292.14
+      objectReference: {fileID: 0}
     - target: {fileID: 4332761948033820475, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
       propertyPath: m_Name
       value: TOWERPANELS
@@ -379,6 +387,14 @@ PrefabInstance:
     - target: {fileID: 4427041360581352687, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 208.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458135758709895515, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -387.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458135758709895515, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 242.1
       objectReference: {fileID: 0}
     - target: {fileID: 5008859691464459645, guid: bbc9877668294284d89a611f78cd89b6, type: 3}
       propertyPath: m_Sprite
