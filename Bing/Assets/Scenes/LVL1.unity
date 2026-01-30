@@ -1290,11 +1290,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1152885463104843754, guid: a8f0710248804aa4f9bd618e09c4efc2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.13
+      value: 13.36
       objectReference: {fileID: 0}
     - target: {fileID: 1152885463104843754, guid: a8f0710248804aa4f9bd618e09c4efc2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.09
+      value: -4.58
       objectReference: {fileID: 0}
     - target: {fileID: 1152885463104843754, guid: a8f0710248804aa4f9bd618e09c4efc2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2205,7 +2205,7 @@ MonoBehaviour:
   - {fileID: 5812623357828077997}
   waves:
   - enemyPrefabs:
-    - {fileID: 3617005610911810817, guid: c00a976f0524ffe4e9709ca3d9d0e772, type: 3}
+    - {fileID: 0}
     enemyCount: 10
     timeBetweenSpawns: 0.5
   - enemyPrefabs:
