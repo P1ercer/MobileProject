@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 6392058678212860535}
   - component: {fileID: 8792250432932886534}
   - component: {fileID: 6520135380270227927}
+  - component: {fileID: 7693996944161354933}
+  - component: {fileID: 5265032167670357545}
   m_Layer: 0
   m_Name: Cannoneer
   m_TagString: Tower
@@ -32,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.99999243, w: 0.0038921481}
   m_LocalPosition: {x: 2.3, y: -10.47, z: 0}
-  m_LocalScale: {x: 1.35, y: 1.35, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -134,7 +136,7 @@ MonoBehaviour:
   timer: 0
   isSharp: 0
   isExplosive: 1
-  shootTriggerDistance: 4
+  shootTriggerDistance: 9.02
   enemy: {fileID: 0}
   upgradeName: Hollow purple
   upgradeDescription: 'Take the amplified and the reversal, then smash together those
@@ -222,3 +224,56 @@ MonoBehaviour:
   animator: {fileID: 7753777485170519340}
   shootAnim: CannoneerShoot
   idleAnim: CannoneerIdle
+--- !u!114 &7693996944161354933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7231463384959824751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 095ebd52e85d76d419a8c0cd3608fe5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tower: {fileID: 1285856353324076584}
+  animator: {fileID: 7753777485170519340}
+  shootAnim: Cannoner_Shoot
+  idleAnim: Idle_Cannoner
+--- !u!114 &5265032167670357545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7231463384959824751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85bf391da4dba964d866567566caf8dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sharp: {fileID: 2976222412907256880, guid: 944bc051fb22d324199fbf36a29d9d62, type: 3}
+  Explosive: {fileID: 2976222412907256880, guid: 944bc051fb22d324199fbf36a29d9d62, type: 3}
+  towerName: 
+  towerDescription: 
+  sharpDamage: 1
+  explosiveDamage: 10
+  shootSpeed: 10
+  bulletLifetime: 2
+  shootDelay: 0.5
+  timer: 0
+  isSharp: 0
+  isExplosive: 0
+  shootTriggerDistance: 5
+  enemy: {fileID: 0}
+  upgradeName: 
+  upgradeDescription: 
+  sharpDamageIncrease: 0
+  explosiveDamageIncrease: 0
+  shootSpeedIncrease: 0
+  shootDelayReduction: 0
+  rangeIncrease: 0
+  upgradeApplied: 0
+  TowerPrice: 50
+  upgradePrice: 75
+  sellRefundPercent: 0.5
