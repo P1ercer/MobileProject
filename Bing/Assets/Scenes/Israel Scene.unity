@@ -787,9 +787,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyTest1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3902660583575662585, guid: c00a976f0524ffe4e9709ca3d9d0e772, type: 3}
-    - {fileID: 919940683463851389, guid: c00a976f0524ffe4e9709ca3d9d0e772, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
