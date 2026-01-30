@@ -4,9 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+
 
 public class TowerUIManager : MonoBehaviour
 {
+    public string levelToLoad;
+
     public static TowerUIManager Instance;
     [SerializeField] private PreventPlace preventPlace;
     // ─────────────────────────────
@@ -329,6 +333,9 @@ public class TowerUIManager : MonoBehaviour
             baseHealthText.text = $"Base HP: {current} / {max}";
     }
 
-
+    public void QuitToMainMenu()
+    {
+        SceneManager.LoadScene(levelToLoad);
+    }
 
 }
