@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 8702223132855488498}
   - component: {fileID: 1200882473251689026}
   - component: {fileID: 8015905803174675345}
+  - component: {fileID: 1520055841755958700}
+  - component: {fileID: -3002563185479427537}
   m_Layer: 0
   m_Name: EnemyTest1
   m_TagString: Enemy
@@ -220,3 +222,29 @@ MonoBehaviour:
   IsExoskeleton: 0
   health: 30
   goldReward: 10
+--- !u!114 &1520055841755958700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3617005610911810817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d35cb6b2e22a8d64296dd2947de4b073, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathPoints: []
+  moveSpeed: 2
+--- !u!114 &-3002563185479427537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3617005610911810817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff6e2363e4fb214ea0def12207654e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

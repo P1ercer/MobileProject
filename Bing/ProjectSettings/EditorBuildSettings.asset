@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LVL3.unity
     guid: ad02aae8ca8c1804ea2c34d87cddff5a
+  - enabled: 1
+    path: Assets/Scenes/Gameoverscreen.unity
+    guid: df88e20856f87824fb43dbd9aff1db3a
   m_configObjects: {}
