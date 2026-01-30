@@ -2069,17 +2069,9 @@ PrefabInstance:
       value: EnemySpawnPoint
       objectReference: {fileID: 0}
     - target: {fileID: 8674101480154042416, guid: faad67f627fe9de4b8be946427330b12, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8674101480154042416, guid: faad67f627fe9de4b8be946427330b12, type: 3}
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 321537288}
-    - target: {fileID: 8674101480154042416, guid: faad67f627fe9de4b8be946427330b12, type: 3}
-      propertyPath: pathPoints.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 8674101480154042416, guid: faad67f627fe9de4b8be946427330b12, type: 3}
       propertyPath: pathPoints.Array.data[0]
       value: 
@@ -2096,26 +2088,6 @@ PrefabInstance:
       propertyPath: pathPoints.Array.data[3]
       value: 
       objectReference: {fileID: 805326703}
-    - target: {fileID: 8674101480154042416, guid: faad67f627fe9de4b8be946427330b12, type: 3}
-      propertyPath: waves.Array.data[0].enemyCount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8674101480154042416, guid: faad67f627fe9de4b8be946427330b12, type: 3}
-      propertyPath: waves.Array.data[0].enemyPrefabs.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8674101480154042416, guid: faad67f627fe9de4b8be946427330b12, type: 3}
-      propertyPath: waves.Array.data[0].enemyPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 3617005610911810817, guid: c00a976f0524ffe4e9709ca3d9d0e772, type: 3}
-    - target: {fileID: 8674101480154042416, guid: faad67f627fe9de4b8be946427330b12, type: 3}
-      propertyPath: waves.Array.data[0].enemyPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 3617005610911810817, guid: c00a976f0524ffe4e9709ca3d9d0e772, type: 3}
-    - target: {fileID: 8674101480154042416, guid: faad67f627fe9de4b8be946427330b12, type: 3}
-      propertyPath: waves.Array.data[0].enemyPrefabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 3617005610911810817, guid: c00a976f0524ffe4e9709ca3d9d0e772, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2336,8 +2308,8 @@ SceneRoots:
   - {fileID: 78487781}
   - {fileID: 982881506}
   - {fileID: 196430212}
-  - {fileID: 788151724}
   - {fileID: 2007574000}
+  - {fileID: 788151724}
   - {fileID: 1824236893}
   - {fileID: 246774764}
   - {fileID: 78357541}

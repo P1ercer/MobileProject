@@ -98,10 +98,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 0}
-  pathPoints: []
+  pathPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   waves:
-  - enemyPrefabs: []
-    enemyCount: 0
+  - enemyPrefabs:
+    - {fileID: 3617005610911810817, guid: c00a976f0524ffe4e9709ca3d9d0e772, type: 3}
+    - {fileID: 3617005610911810817, guid: c00a976f0524ffe4e9709ca3d9d0e772, type: 3}
+    - {fileID: 3617005610911810817, guid: c00a976f0524ffe4e9709ca3d9d0e772, type: 3}
+    enemyCount: 3
     timeBetweenSpawns: 0
   - enemyPrefabs: []
     enemyCount: 0
