@@ -1237,7 +1237,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1337092552}
   - component: {fileID: 1337092551}
-  - component: {fileID: 1337092550}
   m_Layer: 0
   m_Name: MusicHandler
   m_TagString: Untagged
@@ -1245,18 +1244,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1337092550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1337092549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74913075658004444a202d7cf9e2009e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &1337092551
 AudioSource:
   m_ObjectHideFlags: 0
