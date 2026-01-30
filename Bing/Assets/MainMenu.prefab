@@ -347,9 +347,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0888c1b00bdabef419e259121fcde68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: Level 1
-  loadToLevel: Level 2
-  levelToLevel: Level 3
+  levelToLoad: LVL1
+  loadToLevel: LVL2
+  levelToLevel: LVL3
 --- !u!114 &7259606245064714951
 MonoBehaviour:
   m_ObjectHideFlags: 0
