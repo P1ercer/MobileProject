@@ -122,6 +122,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &321537288 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8526592457907160662, guid: d78870776ec0c414ebb26ce4dd9abb83, type: 3}
+  m_PrefabInstance: {fileID: 497793442}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &349168466 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 407038575607869088, guid: d8843e553b3b0b647b05e8fb9df7a40d, type: 3}
@@ -266,8 +271,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de7c9781619b00244ae8e6b620bf5777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 100
+  levelToLoad: Gameoverscreen
+  maxHealth: 80
+  currentHealth: 80
 --- !u!4 &805326703 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6368479178536042634, guid: 92778c5c5a163994291e904001d368f8, type: 3}
@@ -1378,6 +1384,54 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawnPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 8674101480154042416, guid: faad67f627fe9de4b8be946427330b12, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674101480154042416, guid: faad67f627fe9de4b8be946427330b12, type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 321537288}
+    - target: {fileID: 8674101480154042416, guid: faad67f627fe9de4b8be946427330b12, type: 3}
+      propertyPath: pathPoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674101480154042416, guid: faad67f627fe9de4b8be946427330b12, type: 3}
+      propertyPath: pathPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 938593248}
+    - target: {fileID: 8674101480154042416, guid: faad67f627fe9de4b8be946427330b12, type: 3}
+      propertyPath: pathPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 349168466}
+    - target: {fileID: 8674101480154042416, guid: faad67f627fe9de4b8be946427330b12, type: 3}
+      propertyPath: pathPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 1424565960}
+    - target: {fileID: 8674101480154042416, guid: faad67f627fe9de4b8be946427330b12, type: 3}
+      propertyPath: pathPoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 805326703}
+    - target: {fileID: 8674101480154042416, guid: faad67f627fe9de4b8be946427330b12, type: 3}
+      propertyPath: waves.Array.data[0].enemyCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674101480154042416, guid: faad67f627fe9de4b8be946427330b12, type: 3}
+      propertyPath: waves.Array.data[0].enemyPrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674101480154042416, guid: faad67f627fe9de4b8be946427330b12, type: 3}
+      propertyPath: waves.Array.data[0].enemyPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 3617005610911810817, guid: c00a976f0524ffe4e9709ca3d9d0e772, type: 3}
+    - target: {fileID: 8674101480154042416, guid: faad67f627fe9de4b8be946427330b12, type: 3}
+      propertyPath: waves.Array.data[0].enemyPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 3617005610911810817, guid: c00a976f0524ffe4e9709ca3d9d0e772, type: 3}
+    - target: {fileID: 8674101480154042416, guid: faad67f627fe9de4b8be946427330b12, type: 3}
+      propertyPath: waves.Array.data[0].enemyPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 3617005610911810817, guid: c00a976f0524ffe4e9709ca3d9d0e772, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

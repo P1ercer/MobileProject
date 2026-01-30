@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class BaseHealth : MonoBehaviour
 {
     public static BaseHealth Instance;
+    public string levelToLoad;
+
 
     public int maxHealth = 100;
     public int currentHealth;
@@ -32,7 +36,6 @@ public class BaseHealth : MonoBehaviour
 
     private void OnBaseDestroyed()
     {
-        Debug.Log("Base Destroyed!");
-        // Game Over logic here
+        SceneManager.LoadScene(levelToLoad);
     }
 }
