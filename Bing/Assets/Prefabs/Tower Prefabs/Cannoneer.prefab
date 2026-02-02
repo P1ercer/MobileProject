@@ -127,7 +127,7 @@ MonoBehaviour:
   Sharp: {fileID: 0}
   Explosive: {fileID: 2976222412907256880, guid: 944bc051fb22d324199fbf36a29d9d62, type: 3}
   towerName: Cannoneer
-  towerDescription: Big bomb go kaboom
+  towerDescription: Big bomb go kaboom, only one to deal damage to EXO enemies!
   sharpDamage: 0
   explosiveDamage: 8
   shootSpeed: 3

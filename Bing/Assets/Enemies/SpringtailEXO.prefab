@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2106244085, guid: 27b9b3f93d48aab46b8f0b096821b103, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsExoskeleton: 1
-  health: 30
+  health: 15
   goldReward: 10
 --- !u!114 &8032504660255612437
 MonoBehaviour:
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathPoints: []
-  moveSpeed: 2
+  moveSpeed: 3
 --- !u!82 &-569379241105720437
 AudioSource:
   m_ObjectHideFlags: 0
