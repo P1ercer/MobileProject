@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bcc2756f192b5314ebc76c32672a95ac
+guid: 683758ea35d0f854e9fdb271fc25c054
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MainMenu.Assets_0
+      name: New Piskel (2)_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 125
-        width: 125
-        height: 125
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,41 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dbb2d163f9c04394097b5903e115a576
-      internalID: -1489891112
+      spriteID: a39edef2fb6df11418702f5bdbe867bb
+      internalID: 220709237
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainMenu.Assets_1
-      rect:
-        serializedVersion: 2
-        x: 125
-        y: 125
-        width: 125
-        height: 125
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c55991a97c991bd42a2c30a6a9bc0b4d
-      internalID: 1416216563
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MainMenu.Assets_2
+      name: New Piskel (2)_1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 125
-        height: 125
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,29 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a43addff3afdbb4a84094958ed0c334
-      internalID: -2043684768
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MainMenu.Assets_3
-      rect:
-        serializedVersion: 2
-        x: 125
-        y: 0
-        width: 125
-        height: 125
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ac9556acbd32f5f47829076f0750907b
-      internalID: 1745884586
+      spriteID: 4720293ec4bc54d4792d547ef7897efe
+      internalID: 391522412
       vertices: []
       indices: 
       edges: []
@@ -191,10 +149,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MainMenu.Assets_0: -1489891112
-      MainMenu.Assets_1: 1416216563
-      MainMenu.Assets_2: -2043684768
-      MainMenu.Assets_3: 1745884586
+      New Piskel (2)_0: 220709237
+      New Piskel (2)_1: 391522412
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
